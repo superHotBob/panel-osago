@@ -1,0 +1,40 @@
+@import '../../common/scss/variables';
+
+.counter-wrapper {
+  display: flex;
+  flex-direction: revert;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 48px;
+  padding: 0 16px;
+
+  border: 1px solid #201F32;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  &__button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .mustins-quantity-select {
+    &__counter-icon {
+      color: $color-grey-dark;
+      width: 1em;
+      height: 1em;
+      font-size: 20px;
+    }
+  }
+}

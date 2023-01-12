@@ -1,0 +1,10 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+@import "../../common/scss/themes";
+
+
+.carousel {
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+}

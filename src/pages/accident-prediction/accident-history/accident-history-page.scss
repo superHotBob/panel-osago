@@ -1,0 +1,190 @@
+@import "../../../common/scss/variables";
+@import "../../../common/scss/mixins";
+@import "../../../common/scss/themes";
+
+.accident-history-page {
+  padding-top: 50px;
+  @include for-desktop-up {
+    padding: 50px 28px 0;
+  }
+  @include for-big-desktop-up {
+    padding: 50px 44px 0;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    @include for-desktop-up {
+      justify-content: space-between;
+    }
+  }
+  &__header-data {
+    width: 100%;
+  }
+
+  &__header-data-content {
+    width: 100%;
+    position: relative;
+  }
+
+  &__title {
+    @include for-phone-only {
+      margin-top: 16px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    @include for-tablet-portrait-up {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    @include for-desktop-up {
+      margin-bottom: 16px;
+      margin-top: 32px;
+      text-align: left;
+    }
+    @include for-big-desktop-up {
+      margin-top: 36px;
+      margin-bottom: 26px;
+      text-align: left;
+    }
+
+    span {
+      @include for-phone-only {
+        font-size: 28px !important;
+      }
+      @include for-tablet-portrait-up {
+        font-size: 28px !important;
+      }
+      @include for-desktop-up {
+        font-size: 36px !important;
+      }
+    }
+  }
+
+  &__legend {
+    display: flex;
+    @include for-phone-only {
+      margin-bottom: 24px;
+      justify-content: center;
+    }
+    @include for-tablet-portrait-up {
+      margin-bottom: 32px;
+      justify-content: center;
+    }
+    @include for-desktop-up {
+      margin-bottom: 40px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__sub-title {
+    @include for-phone-only {
+      max-width: 296px;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    @include for-tablet-portrait-up {
+      max-width: 552px;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    @include for-desktop-up {
+      max-width: 392px;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+    @include for-big-desktop-up {
+      margin: 0;
+      margin-bottom: 16px;
+      max-width: 480px;
+      text-align: left;
+    }
+  }
+
+  &__page-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    & + & {
+      margin-left: 16px;
+      @include for-desktop-up {
+        margin-left: 32px;
+      }
+    }
+
+    &:hover {
+      span {
+        @include themify($themes) {
+          color: themed($colorPrimary) !important;
+        }
+      }
+    }
+  }
+
+  &__page-link-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+  }
+
+  &__page-links {
+    display: flex;
+    justify-content: center;
+    @include for-phone-only {
+      margin-bottom: 12px;
+    }
+    @include for-desktop-up {
+      right: 28px;
+      top: 0px;
+      position: absolute;
+      justify-content: left;
+    }
+    @include for-big-desktop-up {
+      right: 14px;
+    }
+  }
+
+  &__more-vehicles {
+    padding: 44px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 6px;
+    border: 1px solid $color-grey-light-2;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+  }
+
+  &__add-subscription {
+    cursor: pointer;
+    padding: 0;
+    margin-right: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.plans-wrapper {
+  margin-bottom: 44px;
+}
+
+.modal-qty-select {
+
+}

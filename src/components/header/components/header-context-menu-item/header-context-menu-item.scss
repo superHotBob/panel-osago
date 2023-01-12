@@ -1,0 +1,44 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+
+.header-context-menu-item {
+  height: 48px;
+  width: 224px;
+  background: $color-must100;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+
+  @include for-phone-only {
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  &:hover {
+    @include for-desktop-up {
+      @include themify($themes) {
+        background: themed($colorPrimary);
+      }
+      span {
+        color: $color-must100 !important;
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    &:hover {
+      @include for-desktop-up {
+        background:$color-must100;
+        span {
+          color: $color-must900 !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.accident-add-vehicle {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    font-family: $font-ubuntu;
+
+    @include for-desktop-up {
+        padding-top: 77px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &__header {
+        margin-bottom: 11px;
+    }
+
+    &__title {
+        font-family: $font-supermolot;
+        font-weight: 400;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 28px;
+
+        @include for-tablet-portrait-up {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include for-desktop-up {
+            font-size: 36px;
+        }
+    }
+
+    &__sub-title {
+        margin-top: 24px;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    &__add-vehicle {
+        margin-top: 50px;
+
+        @include for-desktop-up {
+            margin-top: 92px;
+        }
+    }
+
+    &__technology {
+        margin-top: 40px;
+
+        @include for-tablet-portrait-up {
+            margin-top: 80px;
+        }
+
+        @include for-desktop-up {
+            margin-top: 120px;
+        }
+    }
+}

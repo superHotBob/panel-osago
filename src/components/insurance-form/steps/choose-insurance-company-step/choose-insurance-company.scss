@@ -1,0 +1,39 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.mustins-choose-insurance-company {
+  &__logo {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    svg {
+      height: 28px;
+    }
+  }
+
+  &__loading {
+    background-image: url("../../../../assets/images/contract-data-field-loader.gif");
+    width: 28px;
+    height: 7px;
+    background-size: contain;
+  }
+
+  &__company {
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__radio {
+    label {
+      height: 88px !important;
+    }
+  }
+
+  &__renaissance {
+    margin-left: -51px;
+  }
+}

@@ -1,0 +1,172 @@
+@import '../../common/scss/mixins';
+@import '../../common/scss/variables';
+
+.header {
+  background-color: $color-must100;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  height: 56px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+
+  @include for-tablet-portrait-up {
+    height: 72px;
+  }
+
+  @include for-desktop-up {
+    display: block;
+  }
+
+  @include for-big-desktop-up {
+    height: 88px;
+  }
+
+  &--burger-menu-shown {
+    @include for-tablet-portrait-up {
+      height: 664px;
+    }
+
+    @include for-desktop-up {
+      height: 456px;
+    }
+
+    @include for-big-desktop-up {
+      height: 520px;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    padding-top: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    height: 56px;
+
+    &--burger-menu-shown {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    @include for-tablet-portrait-up {
+      height: auto;
+    }
+
+    @include for-desktop-up {
+      height: 72px;
+    }
+
+    @include for-big-desktop-up {
+      height: 88px;
+    }
+  }
+
+  &__burger-and-button {
+    display: flex;
+    @include for-tablet-portrait-up {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  }
+
+  &__burger {
+    padding: 24px;
+    margin-right: 4px;
+    display: none;
+    cursor: pointer;
+
+    svg {
+      height: 24px;
+      width: 24px;
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      display: flex;
+    }
+  }
+
+  &__mobile-burger {
+    padding: 16px;
+    display: flex;
+    cursor: pointer;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+
+
+  &__logo {
+    height: 32px;
+    align-self: center;
+    @include for-tablet-portrait-up {
+      padding-left: 24px;
+    }
+
+    @include for-desktop-up {
+      padding-left: 28px;
+      height: 32px;
+    }
+    @include for-big-desktop-up {
+      padding-left: 48px;
+      height: 40px;
+    }
+  }
+
+  &__logo-svg {
+    width: 193.6px;
+    height: 32px;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+    @include for-big-desktop-up {
+      width: 242px;
+      height: 40px;
+    }
+  }
+
+  &__services {
+    display: none;
+    @include for-desktop-up {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__services-for-mobile-and-tablet {
+    padding-top: 56px;
+    overflow: auto;
+    height: 72px;
+    padding-left: 16px;
+    box-sizing: content-box;
+    background: $color-must100;
+    @include for-tablet-portrait-up {
+      padding-top: 72px;
+      height: 72px;
+      padding-left: 24px;
+    }
+    @include for-desktop-up {
+      height: 0;
+      overflow: hidden;
+    }
+    @include for-big-desktop-up {
+      padding-top: 88px;
+    }
+  }
+}

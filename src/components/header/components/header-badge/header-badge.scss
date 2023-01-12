@@ -1,0 +1,12 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.header-badge {
+  background: $color-red;
+  width: 20px;
+  height: 20px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

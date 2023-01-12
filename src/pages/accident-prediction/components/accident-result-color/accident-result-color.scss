@@ -1,0 +1,29 @@
+@import '../../../../common/scss/mixins';
+@import '../../../../common/scss/variables';
+
+.accident-result-color {
+  width: 4px;
+  height: 100%;
+  @include for-tablet-portrait-up {
+    width: 8px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  &--green {
+    background: $color-status-success;
+  }
+
+  &--yellow {
+    background: $color-status-warning;
+  }
+
+  &--red {
+    background: $color-status-danger;
+  }
+
+  &--short {
+    width: 4px !important;
+    border-radius: 0!important;
+  }
+}

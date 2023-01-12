@@ -1,0 +1,80 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+
+.mustins {
+  &-osago-form-widget {
+    width: 296px;
+
+    &__brands {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      width: 165px;
+      height: 24px;
+
+      span {
+        color: #BDBDBD;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    &__brands-demo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      width: 224px;
+      height: 24px;
+
+      span {
+        color: #BDBDBD;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    &__must-logo {
+      width: 66px;
+    }
+
+    &__brands-container {
+      width: 296px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -33px;
+    }
+
+    &__plus {
+      position: relative;
+      top: 1px;
+    }
+
+    &__e100-logo {
+      width: 72px;
+    }
+
+    &__elpolis-logo {
+      width: 76px;
+    }
+
+    &__oboz-logo {
+      width: 67px;
+    }
+
+    &__ingos-logo {
+      width: 210px;
+    }
+  }
+
+  &-get-price {
+    &__car-number {
+      margin-bottom: 50px;
+      min-height: 132px;
+    }
+  }
+}

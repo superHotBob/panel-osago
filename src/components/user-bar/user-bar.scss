@@ -1,0 +1,128 @@
+@import '../../common/scss/mixins';
+
+.user-bar {
+  background-color: #000;
+  white-space: nowrap;
+
+  &__inner {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    &-list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+
+      @include desktop {
+        justify-content: flex-start;
+      }
+    }
+
+    &-item {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      & + & {
+        margin-left: 40px;
+
+        @include desktop {
+          margin-left: 56px;
+        }
+      }
+    }
+
+    &-link {
+      display: block;
+      height: 50px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 50px;
+      color: #fff;
+      opacity: 0.5;
+      text-decoration: none;
+
+      @include desktop {
+        padding-right: 6px;
+        padding-left: 6px;
+      }
+
+      &_active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__user {
+    @include desktop {
+      margin-left: 20px;
+    }
+
+    &_mobile {
+      display: none;
+
+      @include header-width {
+        display: block;
+      }
+    }
+
+    &-list {
+      display: flex;
+      justify-content: center;
+
+      @include desktop {
+        justify-content: flex-end;
+      }
+    }
+
+    &-item {
+      & + & {
+        margin-left: 20px;
+        padding-left: 21px;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          width: 1px;
+          height: 20px;
+          margin-top: -10px;
+          background-color: #fff;
+        }
+      }
+
+      &_mobile {
+        @include desktop {
+          display: none;
+        }
+      }
+
+      &_mobile + & {
+        @include desktop {
+          margin-left: 0;
+          padding-left: 0;
+
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 852px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

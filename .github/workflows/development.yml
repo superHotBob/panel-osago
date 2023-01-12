@@ -1,0 +1,40 @@
+name: Development
+
+on:
+  push:
+    branches:
+      - development
+
+env:
+  IMAGE_NAME: mustfoundation/front-osago
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build . --file Dockerfile --tag image
+
+      - name: Log into registry
+        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+
+      - name: Push image
+        run: |
+          VERSION=development
+          docker tag image $IMAGE_NAME:$VERSION
+          docker push $IMAGE_NAME:$VERSION
+      - name: DigitalOcean Kubernetes
+        uses: matootie/dokube@v1.3.4
+        with:
+          personalAccessToken: ${{ secrets.K8S_ACCESS_TOKEN }}
+          clusterName: ${{ secrets.K8S_CLUSTER_NAME }}
+
+      - name: Deploy
+        run: |
+          kubectl rollout restart deployment front-osago-test

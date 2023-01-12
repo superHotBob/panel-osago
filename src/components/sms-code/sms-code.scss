@@ -1,0 +1,48 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.mustins {
+  &-sms-code {
+    width: 290px;
+    background: #FFFFFF;
+    height: 50px;
+    border: 2px solid;
+    @include themify($themes) {
+      border-color: themed($colorPrimary);
+    }
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &--error {
+      border-color: #D76064;
+    }
+
+    &__input {
+      width: 286px;
+      border-radius: 2px;
+      background: #FFFFFF;
+      border: none;
+      padding: 0;
+      margin: 0;
+      padding-left: 80px;
+      height: 46px;
+      box-sizing: border-box;
+      outline: none;
+      font-size: 34px;
+      letter-spacing: 12px;
+      font-family: Supermolot;
+      color: $color-black;
+      caret-color: $color-black;
+      text-transform: uppercase;
+
+      &::placeholder {
+        color: $color-black;
+
+        opacity: 0.2;
+      }
+    }
+  }
+}

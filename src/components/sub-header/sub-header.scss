@@ -1,0 +1,66 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+@import "../../common/scss/themes";
+
+.sub-header {
+    font-family: $font-ubuntu;
+    font-size: 14px;
+    line-height: 1.4;
+    background: $color-grey-light-2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 62px;
+    padding-top: 10px;
+    z-index: 10;
+    box-sizing: border-box;
+    @include tabletMax {
+      position: relative;
+      top: 0;
+    }
+    @media (min-width: 1600px) {
+        top: 80px;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding-left: 0;
+        list-style-type: none;
+        @include tabletMax {
+          flex-direction: column;
+        }
+    }
+    &__item {
+        display: block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: #201f32;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 0px 19px;
+    }
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        &__active {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            color: #8f8e99;
+            cursor: default;
+        }
+    }
+}

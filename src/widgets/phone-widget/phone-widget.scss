@@ -1,0 +1,42 @@
+@import "../../common/scss/common";
+
+.phone-widget {
+  display: flex;
+  align-items: stretch;
+  @include tabletMax {
+    flex-direction: column;
+    button{
+      flex: auto;
+      height: 52px;
+      margin: auto;
+      margin-top: 25px;
+      font-size: 18px;
+    }
+  }
+  #must-eosago-phone-mobile & {
+    display: block;
+  }
+
+  .mustins-form-group {
+    flex: 1 1 auto;
+    margin-right: 13px;
+    @include tabletMax {
+      margin-right: 0;
+      &__container{
+        display: flex;
+        justify-content: center;
+      }
+    }
+    #must-eosago-phone-mobile & {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  .mustins-phone-number {
+    outline: none;
+  }
+
+  &__button {
+    flex: 0 0 209px;
+  }
+}

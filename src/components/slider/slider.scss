@@ -1,0 +1,168 @@
+@import "../../common/scss/variables";
+@import '../../common/scss/mixins';
+
+.mustins-slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 13px 0;
+  box-sizing: border-box;
+  font-family: $font-ubuntu;
+  font-size: 16px;
+  box-sizing: content-box;
+  * {
+    box-sizing: content-box !important;
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"] {
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid transparent;
+    outline: none;
+
+    /*required for proper track sizing in FF*/
+    width: 300px;
+  }
+
+  // Chrome
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0;
+    background: $color-grey;
+    border: 1px solid $color-grey;
+    border-radius: 6px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 16px solid transparent;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    background: transparent;
+    margin-top: -16px;
+  }
+
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: transparent;
+  }
+
+  // Firefox
+  input[type="range"] {
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid $color-white;
+    /*required for proper track sizing in FF*/
+    width: 100%;
+  }
+
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: $color-grey;
+    border: none;
+    border-radius: 6px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  /*hide the outline behind the border*/
+  input[type="range"]:-moz-focusring {
+    outline: 1px solid $color-white;
+    outline-offset: -1px;
+  }
+
+  input[type="range"]:focus::-moz-range-track {
+    background: #ccc;
+  }
+
+  // IE
+  input[type="range"]::-ms-track {
+    width: 100%;
+    height: 6px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+  }
+
+  input[type="range"]::-ms-fill-lower {
+    background: $color-grey;
+    border-radius: 10px;
+  }
+
+  input[type="range"]::-ms-fill-upper {
+    background: $color-grey;
+    border-radius: 6px;
+  }
+
+  input[type="range"]::-ms-thumb {
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  input[type="range"]:focus::-ms-fill-lower {
+    background: $color-grey;
+  }
+
+  input[type="range"]:focus::-ms-fill-upper {
+    background: $color-grey;
+  }
+
+  &__circle {
+    position: absolute;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 13px solid $color-white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    z-index: 2;
+    @include themify($themes) {
+      background-color: themed($colorPrimary);
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    left: 2px;
+    pointer-events: none;
+  }
+
+  &__progress {
+    height: 6px;
+    border-radius: 6px;
+    position: absolute;
+    top: 22px;
+    z-index: 1;
+    @include themify($themes) {
+      background-color: themed($colorPrimary);
+    }
+  }
+}

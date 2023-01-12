@@ -1,0 +1,77 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-phone-number {
+    width: 296px;
+    background: transparent;
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: border-color 0.2s;
+    position: relative;
+
+    &--disabled {
+      input.mustins-input {
+        background: $color-must200;
+        border-color: $color-must600;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      span {
+        color:$color-must700 !important;
+      }
+    }
+
+    &__number {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      flex-direction: row;
+      margin-left: 13px;
+      cursor: text;
+      user-select: none;
+
+      &--focused {
+        display: flex;
+      }
+
+      &---hidden {
+        font-size: 34px;
+        letter-spacing: 13px;
+        font-family: $font-ubuntu;
+        text-transform: uppercase;
+        position: absolute;
+        top: -1500px;
+      }
+    }
+
+    &__digits-row {
+      display: flex;
+      flex-direction: row;
+      margin: 0 4px;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .mustins-input {
+      color: transparent;
+      caret-color: $color-black;
+      font-size: 18px
+    }
+  }
+}

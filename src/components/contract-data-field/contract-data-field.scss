@@ -1,0 +1,150 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+@import "../../common/scss/themes";
+
+.mustins {
+  &-contract-data-field {
+    margin-top: 8px;
+    width: 100%;
+    min-height: 43px;
+    padding: 8px 0;
+    box-sizing: content-box;
+
+    &--opened {
+      height: 100px;
+      padding: 0;
+    }
+
+    &__label {
+      display: flex;
+      justify-content: space-between;
+      width: 296px;
+    }
+
+    &__loading {
+      background-image: url("../../assets/images/contract-data-field-loader.gif");
+      width: 28px;
+      height: 7px;
+      background-size: contain;
+    }
+
+    &__value {
+      font-size: 14px;
+      font-family: $font-ubuntu;
+      color: $color-black;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__icon {
+      margin-left: 9px;
+      height: 16px;
+
+      &--edit {
+        cursor: pointer;
+      }
+    }
+
+    &__icon-ok {
+      margin-left: 9px;
+      height: 16px;
+
+      svg {
+        circle {
+          @include themify($themes) {
+            fill: themed($colorPrimary);
+          }
+        }
+      }
+
+      &--edit {
+        cursor: pointer;
+      }
+    }
+
+    &__field {
+      display: flex;
+    }
+
+    &--confirm {
+      .mustins-form-control,
+      .mustins-input,
+      .mustins-car-number,
+      .mustins-car-number__region-container,
+      .mustins-select__control,
+      .mustins-date-input input,
+      .mustins-phone-number__input {
+        border-color: #ec7d18 !important;
+        max-width: 242px;
+      }
+
+      .mustins-contract-data-field__label span,
+      .mustins-error-text {
+        color: #ec7d18;
+      }
+    }
+
+    .mustins-form-group--error {
+      .mustins-contract-data-field__label span,
+      .mustins-error-text {
+        color: #ef5740;
+      }
+
+      .mustins-form-control,
+      .mustins-input,
+      .mustins-car-number,
+      .mustins-car-number__region-container,
+      .mustins-select__control,
+      .mustins-date-input input,
+      .mustins-phone-number__input {
+        border-color: #ef5740 !important;
+      }
+    }
+
+    .mustins-button {
+      margin-top: 0;
+      height: 48px;
+      width: 48px;
+      margin-left: 6px;
+    }
+
+    .mustins-select__value-container {
+      font-size: 14px;
+      font-family: $font-ubuntu;
+    }
+
+    .react-datepicker-wrapper,
+    .mustins-date-input,
+    .mustins-select-ctn,
+    .mustins-autocomplete {
+      width: 100%;
+    }
+
+    .mustins-form-group .mustins-error-text {
+      text-align: left;
+    }
+
+    .mustins-phone-number__number-input {
+      color: transparent;
+    }
+
+    .mustins-phone-number {
+      border: none;
+    }
+  }
+}
+
+.mustins-select-ctn {
+  &__indicator {
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+  }
+  &__dark {
+    color: $color-grey-dark;
+  }
+}

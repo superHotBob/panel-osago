@@ -1,0 +1,32 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.three-columns-layout {
+  display: flex;
+  padding: 0 28px;
+  margin: auto;
+  max-width: 1600px;
+  @include for-big-desktop-up {
+    padding: 0 44px;
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    min-width: -webkit-min-content;
+    flex-direction: column;
+  }
+
+  &__center {
+    flex-direction: column;
+  }
+
+  &__right {
+    flex: 1;
+    display: flex;
+    min-width: -webkit-min-content;
+    //justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

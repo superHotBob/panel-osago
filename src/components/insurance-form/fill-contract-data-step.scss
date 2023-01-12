@@ -1,0 +1,71 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-fill-contract-data-step {
+    &__block {
+      padding: 40px 37px;
+      border-top: 1px solid $color-grey;
+      margin: 0 -37px;
+
+      &--first {
+        padding-top: 0;
+        border-top: none;
+      }
+
+      &:first-child {
+        margin-top: -40px;
+        border-top: none;
+      }
+
+      &-title {
+        font-family: $font-ubuntu;
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-black;
+        margin-bottom: 24px;
+      }
+    }
+
+    &__logofooter {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__grey-block {
+      padding: 14px 24px;
+      background: $color-grey-light;
+      border-radius: 10px;
+      margin-bottom: 40px;
+
+      &-title {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-cost {
+        font-size: 48px;
+        color: $color-must900;
+        line-height: 40px;
+        font-weight: 400;
+        font-family: $font-supermolot;
+        white-space: nowrap;
+
+        &-rub {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__explanation {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+  }
+}

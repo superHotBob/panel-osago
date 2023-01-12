@@ -1,0 +1,175 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.mustins {
+  &-checkbox {
+    &__container {
+      display: flex;
+      align-items: center;
+      width: 296px;
+
+      &--disabled {
+        .mustins-checkbox__label {
+        }
+
+        .mustins-checkbox__control {
+          cursor: not-allowed;
+        }
+
+        .mustins-checkbox__indicator, &:hover .mustins-checkbox__indicator {
+          background: $color-must200 !important;
+          border: 1px solid $color-must600 !important;
+
+          svg {
+            margin-left: -1px;
+            path {
+              fill: $color-must600 !important;
+            }
+          }
+        }
+      }
+    }
+
+    &__control {
+      display: flex;
+      align-items: start;
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+
+      input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+
+      input:checked ~ .mustins-checkbox__indicator {
+        @include themify($themes) {
+          background: themed($colorPrimary);
+        }
+        border: none;
+
+        svg {
+          display: block;
+        }
+      }
+
+      //&:hover input ~ .mustins-checkbox__indicator {
+      //  background: #f7f4f4;
+      //}
+
+      input:checked ~ .mustins-checkbox__indicator:after {
+        display: block;
+      }
+
+      //input + .mustins-checkbox__indicator:before {
+      //  animation: s-ripple 250ms ease-out;
+      //}
+      //
+      //input:checked + .mustins-checkbox__indicator:before {
+      //  animation-name: s-ripple-dup;
+      //}
+    }
+
+    &__label {
+      margin-left: 16px;
+      min-height: 24px;
+      width: calc(100% - 40px);
+
+      &--footnote {
+        height: 32px;
+      }
+    }
+
+    &__note {
+      margin-top: 2px;
+      height: 18px;
+    }
+
+    &__indicator {
+      height: 24px;
+      width: 24px;
+      background: $color-white;
+      border: 1px solid $color-black;
+      border-radius: 6px;
+      box-sizing: border-box;
+
+      svg {
+        display: none;
+      }
+
+      //&:after {
+      //  box-sizing: unset;
+      //  content: '';
+      //  position: absolute;
+      //  display: none;
+      //  left: 12px;
+      //  top: 10px;
+      //  width: 6px;
+      //  height: 11px;
+      //  border: solid #23B4BA;
+      //  border-width: 0 2px 2px 0;
+      //  transform: rotate(45deg);
+      //}
+      //
+      //&:before {
+      //  content: '';
+      //  display: block;
+      //  position: absolute;
+      //  left: 0;
+      //  top: 0;
+      //  width: 4.5rem;
+      //  height: 4.5rem;
+      //  margin-left: -1.3rem;
+      //  margin-top: -1.3rem;
+      //  background: #2aa1c0;
+      //  border-radius: 3rem;
+      //  opacity: 0.6;
+      //  z-index: 99999;
+      //  transform: scale(0);
+      //}
+
+      &--error {
+        border-color: #D76064;
+      }
+    }
+
+    &__container--black {
+      .mustins-checkbox__label,
+      .mustins-checkbox__note {
+        color: #000;
+      }
+    }
+  }
+}
+
+@keyframes s-ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+

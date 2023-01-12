@@ -1,0 +1,43 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.mustins {
+  &-form-row {
+    margin-bottom: 8px;
+    position: relative;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &--24 {
+      margin-bottom: 24px;
+    }
+
+    &--bordered {
+      padding: 0 37px 40px 37px;
+      margin: 0 -37px 40px -37px;
+      border-bottom: 1px solid $color-grey;
+
+      &--first {
+        border-top: 1px solid $color-grey;
+        padding-top: 40px;
+        margin-top: 40px;
+      }
+    }
+
+    &-submit {
+      margin-top: 40px;
+    }
+
+    &--error {
+      .mustins-input,
+      .mustins-phone-number,
+      .mustins-email,
+      .mustins-sms-code {
+        border-color: #D76064;
+        transition: border-color 0.15s ease-out;
+      }
+    }
+  }
+}

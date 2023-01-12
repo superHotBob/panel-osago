@@ -1,0 +1,38 @@
+@import "src/common/scss/variables";
+@import "src/common/scss/mixins";
+
+.mustins-help-bubble {
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__bubble {
+    position: absolute;
+    display: none;
+    z-index: 9;
+    margin-left: -203px;
+    filter: drop-shadow(0px 30px 30px rgba(0, 0, 0, 0.05));
+
+    &--shown {
+      display: block;
+    }
+  }
+
+  &__text {
+    padding: 12px;
+    background: $color-must100;
+    width: 234px;
+    height: 84px;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+
+  &__triangle {
+    position: relative;
+    left: 203px;
+    top: 5px;
+      path {
+        fill: $color-must100;
+      }
+  }
+}

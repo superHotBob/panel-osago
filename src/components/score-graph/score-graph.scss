@@ -1,0 +1,348 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.score-graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @include for-desktop-up {
+    width: 472px;
+  }
+  @include for-big-desktop-up {
+    width: 576px;
+  }
+  @include for-phone-only {
+    width: 100%;
+  }
+
+  &__title {
+    span {
+      @include for-tablet-portrait-up {
+        font-size: 10px !important;
+      }
+      @include for-desktop-up {
+        font-size: 12px !important;
+      }
+      @include for-big-desktop-up {
+        font-size: 14px !important;
+      }
+      @include for-phone-only {
+        font-size: 7px !important;
+      }
+    }
+
+    margin-bottom: 6px;
+    @include for-desktop-up {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__norm {
+    padding: 4px 10px;
+    background: $color-status-success;
+    border-radius: 6px;
+    margin-top: 8px;
+    @include for-desktop-up {
+      margin-top: 12px;
+    }
+    @include for-big-desktop-up {
+      margin-top: 16px;
+    }
+
+    span {
+      @include for-tablet-portrait-up {
+        font-size: 10px !important;
+      }
+      @include for-desktop-up {
+        font-size: 12px !important;
+      }
+      @include for-big-desktop-up {
+        font-size: 12px !important;
+      }
+      @include for-phone-only {
+        font-size: 7px !important;
+      }
+    }
+  }
+
+  &__title_animated {
+    margin-bottom: 27px;
+    @include for-phone-only {
+      margin-bottom: 10px;
+      max-width: 240px;
+    }
+  }
+
+  &__technologies {
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 25px;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__technologies-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 12px;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 82px;
+    height: 30px;
+    margin: 0 10px;
+  }
+
+  &__logo-ingos {
+    margin-left: 10px;
+  }
+
+  &__svg-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__arrow-with-circle-svg {
+    position: absolute;
+    transform: rotate(-105deg);
+
+    @include for-tablet-portrait-up {
+      width: 180.55px;
+      height: 209.72px;
+      top: 82.22px;
+      left: 110.19px;
+      transform-origin: 90.27px 116.12px;
+    }
+
+    @include for-desktop-up {
+      width: 213px;
+      height: 247.47px;
+      top: 97px;
+      left: 130px;
+      transform-origin: 106.5px 137px;
+    }
+
+    @include for-big-desktop-up {
+      width: 260px;
+      height: 302px;
+      top: 118.4px;
+      left: 158.68px;
+      transform-origin: 130px 167.23px;
+    }
+
+    @include for-phone-only {
+      width: 133.61px;
+      height: 155.19px;
+      top: 60.84px;
+      left: 81.54px;
+      transform-origin: 66.8px 85.93px;
+    }
+  }
+
+  &__dotted {
+    @include for-phone-only {
+      width: 112px;
+      height: 42px;
+    }
+  }
+
+  &__text-group {
+    position: absolute;
+    min-width: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  &__text-group-helpText {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #9E9E9E;
+    width: 109px;
+
+    @include for-phone-only {
+      font-size: 12.2px;
+      width: 83px;
+    }
+  }
+
+  &__text-group-score-text {
+    font-family: Supermolot;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    line-height: 41px;
+    padding-top: 16px;
+    padding-bottom: 2px;
+
+    @include for-phone-only {
+      font-size: 22px;
+      padding-top: 3px;
+    }
+  }
+
+  &__text-group-score-text-percent {
+    font-family: Supermolot;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    line-height: 41px;
+    padding-top: 16px;
+    padding-bottom: 2px;
+
+    @include for-phone-only {
+      font-size: 22px;
+      padding-top: 3px;
+    }
+  }
+
+  &__text-green {
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+    font-weight: bold;
+  }
+
+  &__text-blue {
+    color: #4C86EE;
+    font-weight: bold;
+  }
+
+  &__text-yellow {
+    color: #E6C104;
+    font-weight: bold;
+  }
+
+  &__text-orringe {
+    color: #DB8A3D;
+    font-weight: bold;
+  }
+
+  &__text-red {
+    color: #D76064;
+    font-weight: bold;
+  }
+
+  &__infinite-animation {
+    animation: rotate 3s 5s ease;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__main-svg {
+
+    @include for-tablet-portrait-up {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include for-desktop-up {
+      height: 472px;
+      width: 472px;
+    }
+
+    @include for-big-desktop-up {
+      width: 576px;
+      height: 576px;
+    }
+
+    @include for-phone-only {
+      height: 296px;
+      width: 296px;
+    }
+  }
+
+  &__number-title {
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__mobile-auto-number {
+    display: none;
+    @include for-phone-only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__number {
+    width: 290px;
+    margin-bottom: 27px;
+  }
+
+  &__score-period-container {
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__score-period-container-mobile {
+    display: block;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+  }
+
+  &__tabs {
+    background: $color-must200;
+    display: flex;
+    border-radius: 6px;
+    height: 40px;
+    width: 296px;
+    margin-top: 16px;
+    @include for-tablet-portrait-up {
+      width: 176px;
+      margin-top: 120px;
+      position: absolute;
+      left: calc(50% - 88px);
+    }
+
+    @include for-desktop-up {
+      margin-top: 147px;
+    }
+
+    @include for-big-desktop-up{
+      margin-top:183px;
+    }
+  }
+
+  &__tab {
+    cursor: pointer;
+    width: 50%;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--active {
+      background: $color-must900;
+    }
+  }
+}

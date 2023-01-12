@@ -1,0 +1,88 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins';
+
+.mustins-subscriptions-detail-card-list {
+  width: 100%;
+  border: 1px solid $color-grey;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  &__table {
+    width: 100%;
+    padding: 12px 30px;
+
+    @include tabletMax {
+      padding: 10px;
+    }
+  }
+
+  &__define {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: $font-ubuntu;
+    border-bottom: 1px solid $color-grey;
+
+    @include tabletMax {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    &:first-child {
+      width: 110px;
+
+      @include tabletMax {
+        width: 50px;
+        margin-right: 5px;
+      }
+    }
+
+    &:last-child {
+      width: 75px;
+    }
+
+    &--counter {
+      margin-left: 10px;
+      width: 45px;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-must150;
+  }
+
+  &__row {
+    &:last-child {
+      border-bottom: none;
+
+      .mustins-subscriptions-detail-card-list__define {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__delete {
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 14px;
+    line-height: 1.4;
+
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+    @include tabletMax {
+      font-size: 12px;
+      line-height: 1;
+      margin-left: 10px;
+    }
+  }
+}

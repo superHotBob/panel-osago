@@ -1,0 +1,20 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+
+.mustins-benefit-details-step {
+  &__inner {
+    padding-top: 11px;
+  }
+  &__result {
+    background: $color-grey-light-2;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 13px;
+    padding-bottom: 18px;
+    margin-bottom: 44px;
+    &__price {
+      margin-top: 13px;
+    }
+  }
+}

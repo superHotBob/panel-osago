@@ -1,0 +1,10 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.speedo {
+  span {
+    @include for-phone-only {
+      font-size: 24px !important;
+    }
+  }
+}

@@ -1,0 +1,178 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+@mixin activeState {
+  border: 1px solid !important;
+  padding: 20px 0 16px;
+  background-image: none !important;
+
+  @include themify($themes) {
+    border-color: themed($colorPrimary) !important;
+    background-color: themed($colorPrimary100);
+  }
+
+  .mustins-image-upload__icon,
+  .mustins-image-upload__preview {
+    opacity: 0;
+  }
+
+  .mustins-image-upload__placeholder {
+    &:before, &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.mustins {
+  &-image-upload {
+    @include themify($themes) {
+      background-image: themed($imageUploadBackgroundImage);
+    }
+    box-sizing: border-box;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 21px 1px 17px;
+    height: 216px;
+    width: 296px;
+    transition: background-color .3s;
+    background-color: $color-white;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    &--rejected {
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23F27A72FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+    }
+
+    &--active:not(.mustins-image-upload--readonly) {
+      @include activeState;
+    }
+
+    @include for-tablet-landscape-up {
+      &:hover:not(.mustins-image-upload--uploaded):not(.mustins-image-upload--loading):not(.mustins-image-upload--readonly) {
+        @include activeState;
+      }
+    }
+
+    &--readonly {
+      cursor: default;
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%2327B4B8FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e") !important;
+    }
+
+    &--loading {
+      cursor: not-allowed;
+
+      &:before {
+        content: '';
+        @include themify($themes) {
+          background-image: themed($loaderPrimaryGif);
+        }
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+        user-select: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .mustins-image-upload__button,
+      .mustins-image-upload__icon,
+      .mustins-image-upload__preview {
+        opacity: 0;
+      }
+    }
+
+    &__pdf-preview {
+      position: fixed;
+      top: -1000px;
+      width: 101px !important;
+      height: 144px !important;
+      canvas{
+        width: 101px !important;
+        height: 144px !important;
+      }
+    }
+
+    &__label {
+      font-family: $font-ubuntu;
+      font-size: 14px;
+      margin-bottom: 8px;
+      line-height: 130%;
+    }
+
+    &__button {
+      font-family: $font-supermolot;
+      font-size: 18px;
+      line-height: 140%;
+      background: none;
+      outline: none;
+      border: none;
+      margin: 12px auto 0;
+      display: block;
+      cursor: pointer;
+      text-transform: uppercase;
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 10px;
+      right: 10px;
+    }
+
+    &__preview {
+      max-width: 100%;
+      max-height: 100%;
+      transition: opacity .3s;
+      opacity: 1;
+    }
+
+    &__placeholder {
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 144px;
+      height: 144px;
+
+      &:before, &:after {
+        content: '';
+        @include themify($themes) {
+          background-color: themed($colorPrimary);
+        }
+        position: absolute;
+        transition: opacity .3s;
+        opacity: 0;
+      }
+
+      &:before {
+        width: 82px;
+        height: 1px;
+        left: 50%;
+        margin-left: -41px;
+        top: 50%;
+      }
+
+      &:after {
+        height: 82px;
+        width: 1px;
+        left: 50%;
+        margin-top: -41px;
+        top: 50%;
+      }
+    }
+
+    &__wrap {
+      height: 242px;
+    }
+  }
+}

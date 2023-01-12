@@ -1,0 +1,38 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.carousel-item {
+  background: $color-must150;
+  border-radius: 6px;
+  padding: 24px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 384px;
+  min-height: 160px;
+  margin-bottom: 16px;
+
+  @include for-desktop-up {
+    width: 344px;
+  }
+
+  @include for-big-desktop-up {
+    width: 384px;
+  }
+
+  @include for-phone-only {
+    width: 296px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    justify-content: space-between;
+  }
+
+  &__text {
+    width: 180px;
+    margin-left: 11px;
+  }
+}

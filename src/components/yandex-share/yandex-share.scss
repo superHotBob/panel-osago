@@ -1,0 +1,102 @@
+@import '../../common/scss/mixins';
+@import '../../common/scss/variables';
+
+.yandex-share {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+  align-items: center;
+  justify-content: flex-end;
+  display: none;
+
+  @include desktop {
+    display: flex;
+  }
+
+  &__catcher {
+    pointer-events: auto;
+  }
+
+  .ya-share2 {
+    .ya-share2__title {
+      display: none;
+    }
+
+    .ya-share2__item {
+      margin: 0;
+    }
+
+    .ya-share2__badge {
+      border-radius: 0;
+    }
+
+    .ya-share2__icon {
+      width: 44px;
+      height: 44px;
+      background-size: 44px 44px;
+    }
+  }
+}
+
+//---------------------------------------
+
+.yandex-share {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+  align-items: center;
+  justify-content: flex-end;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .yandex-share {
+    display: flex;
+    z-index: 100;
+  }
+}
+
+.yandex-share__catcher {
+  pointer-events: auto;
+}
+
+.yandex-share .ya-share2 .ya-share2__title {
+  display: none;
+}
+
+.yandex-share .ya-share2 .ya-share2__item {
+  margin: 0;
+}
+
+.yandex-share .ya-share2 .ya-share2__item + .ya-share2__item {
+  border-top: 1px solid #fff;
+}
+
+.yandex-share .ya-share2 .ya-share2__badge {
+  border-radius: 0;
+  @include themify($themes) {
+    background-color: themed($colorPrimary);
+  }
+}
+
+.yandex-share .ya-share2 .ya-share2__badge:hover {
+  @include themify($themes) {
+    background-color: themed($colorPrimary600);
+  }
+}
+
+.ya-share2__item:hover {
+  opacity: 1 !important;
+}
+
+.yandex-share .ya-share2 .ya-share2__icon {
+  width: 50px;
+  height: 44px;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: 50%;
+}

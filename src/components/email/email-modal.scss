@@ -1,0 +1,18 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+@import "../../common/scss/themes";
+
+.email-modal-text {
+    font-family: $font-ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 135%;
+    text-align: center;
+    color: $color-black;
+    margin: auto;
+}
+
+.email-button-container{
+    margin-top: 40px;
+}

@@ -1,0 +1,47 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-autocomplete {
+    position: relative;
+
+    &__list {
+      position: absolute;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      max-height: 300px;
+      background: $color-white;
+      border-radius: 6px;
+      z-index: 2;
+      @include themify($themes) {
+        box-shadow: themed($autocompleteBoxShadow);
+      }
+      overflow: auto;
+      top: calc(100% + 5px);
+      left: 0;
+      right: 0;
+    }
+
+    &__item,
+    &__item-not-found {
+      font-family: 'Supermolot', Arial, sans-serif;
+      padding: 4px 16px;
+      margin: 4px 0;
+      transition: color 0.15s ease-out;
+      color: $color-black;
+      font-size: 18px;
+    }
+
+    &__item {
+      cursor: pointer;
+
+      &:hover,
+      &--active {
+        @include themify($themes) {
+          background-color: themed($colorPrimary100);
+        }
+        cursor: pointer;
+      }
+    }
+  }
+}

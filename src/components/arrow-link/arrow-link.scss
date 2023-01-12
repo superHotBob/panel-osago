@@ -1,0 +1,39 @@
+.mustins {
+  &-arrow-link {
+    font-family: 'Supermolot', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__text {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 50px;
+      color: #fff;
+    }
+
+    &__icon {
+      display: block;
+      margin-left: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: #141526;
+      background-color: #fff;
+      transition: background-color 0.2s;
+
+      svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        stroke: currentColor;
+        transition: fill 0.2s, stroke 0.2s;
+      }
+    }
+  }
+
+}

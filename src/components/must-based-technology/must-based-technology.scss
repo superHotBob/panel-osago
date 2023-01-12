@@ -1,0 +1,36 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins-technologies {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include for-phone-only {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 296px;
+        justify-content: center;
+    }
+
+    @include for-tablet-portrait-up {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    @include for-desktop-up {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    @include for-big-desktop-up {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    &__logo-small {
+        width: 56px;
+        height: 20px;
+        margin: 0 4px;
+    }
+}

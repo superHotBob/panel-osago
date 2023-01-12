@@ -1,0 +1,11 @@
+.accident-badge-svg {
+  height: 32px;
+  width: 32px;
+
+  &--long {
+    height: 32px;
+    width: auto;
+    margin-top: 0px;
+    margin-left: -2px;
+  }
+}

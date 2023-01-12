@@ -1,0 +1,170 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.info-card {
+  max-width: 290px;
+  margin: 0 auto;
+
+  @include tablet {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__car-data {
+    @include tablet {
+      width: 50%;
+      padding: 0 20px;
+    }
+
+    @include desktop {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    &__item {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 30px;
+
+      &__title {
+        width: 100px;
+      }
+    }
+  }
+
+  &__num {
+    margin-bottom: 10px;
+  }
+
+  &__about {
+    display: none;
+
+    &_tablet {
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &_mobile {
+      display: block;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+      background: none;
+      border: none;
+      outline: none;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      vertical-align: top;
+      align-items: center;
+      font-family: inherit;
+      text-decoration: none;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+      &-text {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 50px;
+        color: currentColor;
+      }
+
+      &-icon {
+        margin-right: 10px;
+        flex: 0 0 20px;
+
+        svg {
+          display: block;
+          width: 20px;
+          height: 20px;
+          pointer-events: none;
+          fill: currentColor;
+        }
+      }
+
+      &:disabled {
+        cursor: default;
+        color: #b9bbcd;
+      }
+    }
+
+  &__foot {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      border-top: 1px solid #b9bbcd;
+      justify-content: left;
+      padding-top: 10px;
+    }
+
+    &-item {
+      & + & {
+        margin-left: 20px;
+        padding-left: 21px;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          bottom: 10px;
+          width: 1px;
+          background-color: #b9bbcd;
+        }
+      }
+    }
+  }
+
+  &__history {
+    padding-top: 20px;
+
+    &-num {
+      margin-bottom: 20px;
+    }
+  }
+
+  // Fake Card
+  $fake-color: rgba(#000, 0.1);
+
+  &__fake {
+    &-num {
+      height: 50px;
+      border-radius: 8px;
+      background-color: $fake-color;
+    }
+
+    &-bar {
+      height: 30px;
+      margin-top: 10px;
+      background-color: $fake-color;
+
+      &_history {
+        margin-bottom: 10px;
+      }
+
+      &_btn {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 165px;
+      }
+    }
+  }
+}
+

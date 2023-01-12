@@ -1,0 +1,41 @@
+stages:
+    - build
+    - deploy
+    - deploy_to_dev
+
+build:
+    image: node:13
+    stage: build
+    before_script:
+        - npm install
+    script:
+        - npm run build
+        - cd ./dist && > osago-loader.js && (for f in src*.css; do echo "document.write('<link rel="stylesheet" href=\"//$SSH_SERVER/osago/$f\">');" >> osago-loader.js; done;) && (for f in src*.js; do echo "document.write('<script src=\"//$SSH_SERVER/osago/$f\"></script>');" >> osago-loader.js; done;)
+    artifacts:
+        paths:
+            - dist/
+        expire_in: 30 min
+    only:
+        - master
+
+deploy:
+    stage: deploy
+    before_script:
+        - apt-get update -y
+        - apt-get install -y rsync sshpass
+        - export SSHPASS=$SSH_PASS
+    script:
+        - rsync --rsh="sshpass -e ssh -o StrictHostKeyChecking=no" -ravz --delete ./dist/ $SSH_USER@$SSH_SERVER:~/var/www/www-root/data/mnt/must/osago
+    only:
+        - master
+        
+deploy_to_dev:
+    stage: deploy_to_dev
+    before_script:
+        - apt-get update -y
+        - apt-get install -y rsync sshpass
+        - export SSHPASS=$SSH_PASS
+    script:
+        - rsync --rsh="sshpass -e ssh -o StrictHostKeyChecking=no" -ravz --delete ./dist/ $SSH_USER@$SSH_SERVER:~/var/www/www-root/data/mnt/must-test
+    only:
+        - develop

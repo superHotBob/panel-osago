@@ -1,0 +1,42 @@
+@import "../../common/scss/variables";
+
+.mustins {
+  &-tabs {
+    &__header {
+      display: flex;
+      font-family: $font-ubuntu;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 17px;
+      text-align: center;
+      color: $color-black;
+      margin-bottom: 14px;
+      background: $color-must200;
+      border-radius: 6px;
+      &-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 auto;
+        height: 48px;
+        border-radius: 6px;
+        cursor: pointer;
+        &--active {
+          background: $color-must800;
+          color: $color-white;
+          cursor: default;
+        }
+      }
+      &-item + &-item {
+        margin-left: 8px;
+      }
+    }
+  }
+  &-tab {
+    display: none;
+    &--active {
+      display: block;
+    }
+  }
+}

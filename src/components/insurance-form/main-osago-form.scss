@@ -1,0 +1,29 @@
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-main-osago-form {
+    &__organization-row {
+      line-height: 17px;
+    }
+
+    &__owner-row {
+      display: flex;
+      justify-content: space-between;
+
+      &--requires-confirmation {
+        input {
+          width: 240px;
+        }
+
+        button {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+
+    &__question {
+      cursor: pointer;
+    }
+  }
+}

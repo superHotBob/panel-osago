@@ -1,0 +1,125 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins';
+
+.mustins-subscriptions-detail-history-list {
+  border: 1px solid $color-grey;
+  font-family: $font-ubuntu;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 0 0 15px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+
+  @include tabletMax {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  @include phoneMax {
+    font-size: 10px;
+  }
+  
+  th, td {
+    &:first-child {
+      padding-left: 30px;
+      @include tabletMax {
+        padding-left: 10px;
+      }
+    }
+    &:last-child {
+      padding-right: 30px;
+      text-align: right;
+      @include tabletMax {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__define {
+    padding: 16px 0;
+    border-bottom: 1px solid $color-grey;
+
+    @include tabletMax {
+      padding: 10px;
+    }
+
+    &--score {
+      text-align: right;
+    }
+
+    &--receipt {
+      text-align: right;
+      width: 92px;
+    }
+
+    &--price {
+      text-align: right;
+      width: 96px;
+    }
+  }
+
+  &__head {
+    color: $color-grey-dark;
+    font-size: 14px;
+    text-align: left;
+
+
+    th {
+      font-weight: normal;
+      padding: 15px 0 14px 0;
+      border-bottom: none;
+      line-height: 1.4;
+      background-color: $color-must150;
+      &:first-child {
+        border-top-left-radius: 6px;
+      }
+      &:last-child {
+        border-top-right-radius: 6px;
+      }
+    }
+  }
+
+  &__date {
+    width: 110px;
+    font-weight: normal;
+    border-bottom: 1px solid $color-grey;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.4;
+
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+    @include tabletMax {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    @include phoneMax {
+      font-size: 10px;
+    }
+  }
+
+  &__row {
+    &:first-child {
+      td {
+        padding-top: 28px;
+      }
+    }
+    &:last-child {
+      .mustins-subscriptions-detail-history-list__define {
+        border-bottom: 0;
+      }
+
+      .mustins-subscriptions-detail-history-list__date {
+        border-bottom: 0;
+      }
+    }
+  }
+}

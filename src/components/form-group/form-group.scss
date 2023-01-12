@@ -1,0 +1,75 @@
+@import "src/common/scss/variables";
+
+.mustins {
+  &-form-group {
+    &--additional-padding{
+      padding: 6px 0 2px;
+    }
+    &__container {
+      position: relative;
+
+      &--error {
+        .mustins-form-control,
+        .mustins-phone-number__input,
+        .mustins-input,
+        .mustins-car-number,
+        .mustins-car-number__region-container,
+        .mustins-select__control,
+        .mustins-date-input input {
+          border-color: $color-error !important;
+        }
+
+        .mustins-car-number {
+          &__right-ellipse,
+          &__left-ellipse {
+            circle {
+              fill: $color-error !important;
+            }
+          }
+
+          &__region-container {
+            border-color: $color-error;
+          }
+        }
+      }
+
+      &--warning {
+        .mustins-form-control,
+        .mustins-phone-number__input,
+        .mustins-input,
+        .mustins-car-number,
+        .mustins-car-number__region-container,
+        .mustins-select__control,
+        .mustins-date-input input {
+          border-color: $color-warning !important;
+        }
+
+        .mustins-car-number {
+          &__right-ellipse,
+          &__left-ellipse {
+            circle {
+              fill: $color-warning !important;
+            }
+          }
+
+          &__region-container {
+            border-color: $color-warning;
+          }
+        }
+      }
+    }
+
+    &__label {
+      margin-bottom: 8px;
+      height: 18px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mustins-error-text {
+      display: flex;
+      margin-top: 2px;
+    }
+  }
+}
+

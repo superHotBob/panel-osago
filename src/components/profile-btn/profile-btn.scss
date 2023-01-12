@@ -1,0 +1,123 @@
+@import '../../common/scss/mixins';
+@import '../../common/scss/variables';
+
+.profile-btn {
+  position: relative;
+
+  &__button {
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    text-decoration: none;
+  }
+
+  &__icon {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    @include themify($themes) {
+      background-color: themed($colorPrimary);
+    }
+    margin-right: 10px;
+    overflow: hidden;
+
+    svg {
+      display: block;
+      width: 30px;
+      height: 30px;
+      pointer-events: none;
+      fill: #fff;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #fff;
+  }
+
+  &__popup {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 4px 10px rgba(#000, 0.25);
+    transition: opacity 0.2s, visibility 0.2s, z-index 0s 0.2s;
+
+    @include desktop {
+      display: block;
+    }
+
+    &-item {
+      & + & {
+        border-top: 1px solid #b9bbcd;
+        margin-top: -1px;
+      }
+    }
+
+    &-link {
+      display: block;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 50px;
+      position: relative;
+      color: #9e9e9e;
+
+      &_main {
+        @include themify($themes) {
+          color: themed($colorPrimary);
+        }
+        display: flex;
+        align-items: center;
+      }
+
+      &-icon {
+        display: block;
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: #141526;
+        @include themify($themes) {
+          background-color: themed($colorPrimary);
+        }
+
+        svg {
+          display: block;
+          width: 20px;
+          height: 20px;
+          pointer-events: none;
+          stroke: #fff;
+        }
+      }
+    }
+  }
+
+  &__button:hover + &__popup,
+  &__popup:hover {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+    transition: opacity 0.2s, visibility 0.2s, z-index 0s 0s;
+  }
+}

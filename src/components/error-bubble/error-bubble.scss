@@ -1,0 +1,137 @@
+@import "../../common/scss/mixins";
+
+$tail-width: 22px;
+$tail-height: 53px;
+
+$margin: 10px;
+
+@mixin error-bubble-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: $tail-width;
+  margin-right: $margin;
+  .mustins-error-bubble__tail {
+    transform-origin: center 0;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin error-bubble-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: $tail-width;
+  margin-left: $margin;
+  .mustins-error-bubble__tail {
+    transform-origin: center 0;
+    top: 50%;
+    left: 0;
+    transform: rotate(180deg) translateY(-50%);
+  }
+}
+
+@mixin error-bubble-top {
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  padding-bottom: $tail-width;
+  margin-bottom: $margin;
+  text-align: center;
+  .mustins-error-bubble__tail {
+    transform-origin: 0 center;
+    left: 50%;
+    transform: rotate(90deg) translateX(-50%);
+    bottom: -15px;
+  }
+}
+
+@mixin error-bubble-bottom {
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  padding-top: $tail-width;
+  margin-top: $margin;
+  text-align: center;
+  .mustins-error-bubble__tail {
+    transform-origin: 0 center;
+    left: 50%;
+    transform: rotate(270deg) translateX(-50%);
+    top: -15px;
+  }
+}
+
+.mustins {
+  &-error-bubble {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+    width: 206px;
+    position: absolute;
+    z-index: 10;
+
+    @include for-tablet-portrait-up {
+      &--d-left {
+        @include error-bubble-left
+
+      }
+      &--d-top {
+        @include error-bubble-top
+      }
+      &--d-bottom {
+        @include error-bubble-bottom
+      }
+      &--d-right {
+        @include error-bubble-right
+      }
+    }
+
+    @include for-phone-only {
+      &:not(.mustins-error-bubble--show-mobile) {
+        display: none;
+      }
+      &--m-top {
+        @include error-bubble-top
+      }
+      &--m-left {
+        @include error-bubble-left
+      }
+      &--m-bottom {
+        @include error-bubble-bottom
+      }
+      &--m-right {
+        @include error-bubble-right
+      }
+    }
+
+    &__tail {
+      position: absolute;
+    }
+
+    &--small {
+      width: 150px;
+    }
+
+    &--shown {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__rectangle {
+      background: #d76064;
+      height: 70px;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+      color: #ffffff;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}

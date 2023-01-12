@@ -1,0 +1,52 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.pagination {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    font-family: $font-ubuntu;
+    li {
+        list-style: none;
+        &.previous,
+        &.next {
+            display: none;
+        }
+
+        &.page-link,
+        &.break {
+            width: 44px;
+            height: 44px;
+            background: #fafafa;
+            box-sizing: border-box;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            margin-top: 39px;
+            cursor: pointer;
+            position: relative;
+            &.selected {
+                background: #ffffff;
+                border: 1px solid #8f8e99;
+                cursor: default;
+            }
+            a {
+                outline: none;
+                outline: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

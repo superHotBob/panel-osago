@@ -1,0 +1,101 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+
+.mustins {
+  &-vin-input {
+    position: relative;
+
+    .mustins-input {
+      position: relative;
+      border-radius: 8px;
+    }
+
+    &--black {
+      .mustins-input {
+        border: 1px solid $color-black;
+      }
+    }
+
+    &--focused {
+      .mustins-input {
+        @include themify($themes) {
+          border-color: themed($colorPrimary);
+        }
+      }
+    }
+
+    &__question {
+      .mustins-tooltip__activator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        cursor: pointer;
+        height: 100%;
+        width: 48px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        svg{
+          path{
+            @include themify($themes) {
+              fill: themed($colorPrimary);
+            }
+          }
+        }
+      }
+      .mustins-tooltip__body {
+        right: 1px;
+        top: 100%;
+        margin-top: -11px;
+      }
+      &__icon {
+        @include themify($themes) {
+          color: themed($colorPrimary);
+        }
+      }
+    }
+
+    &__field,
+    &__placeholder {
+      font-family: $font-supermolot;
+      position: absolute;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 27px;
+      top: 1px;
+      bottom: 1px;
+      background-color: transparent;
+      text-transform: uppercase;
+    }
+
+    &__field {
+      left: 1px;
+      padding: 0 0 0 15px;
+      border-radius: 8px;
+      max-width: calc(100% - 16px);
+      height: calc(100% - 2px);
+      border: none;
+      outline: none;
+      z-index: 3;
+      color: transparent;
+      caret-color: $color-black;
+    }
+
+    &__placeholder {
+      left: 1px;
+      right: 1px;
+      padding: 0 24px 0 15px;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      .mustins-vin-input__symbol {
+        color: rgba($color-black, .2);
+        &--value {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

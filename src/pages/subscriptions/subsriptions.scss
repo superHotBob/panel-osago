@@ -1,0 +1,14 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins-subscriptions {
+  color: $color-black;
+
+  @include for-desktop-up {
+    padding-top: 46px;
+  }
+
+  &__body {
+    box-sizing: border-box;
+  }
+}

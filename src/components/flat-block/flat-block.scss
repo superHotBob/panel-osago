@@ -1,0 +1,23 @@
+.mustins-flat-block {
+  background-color: #fff;
+  box-shadow: 0 30px 30px rgba(#000, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+
+  &--type {
+    &-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-overflow {
+      overflow: visible;
+    }
+  }
+
+  & + & {
+    margin-top: 20px;
+  }
+}

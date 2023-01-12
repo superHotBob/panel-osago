@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>еОСАГО | MUST InsScore</title>
+  <style>#must-eosago-insurance-partner-widget {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%
+  }</style>
+</head>
+<body>
+
+<div id="must-eosago-insurance-partner-widget"></div>
+
+<script type="text/javascript">
+  (function (document) {
+    var tag = 'script';
+    var el = document.createElement(tag)
+    var bs = document.getElementsByTagName(tag)[0]
+    el.src = './partner-loader.min.js?' + new Date().getTime()
+    el.onload = function () {
+      mustins({
+        selector: '#must-eosago-insurance-partner-widget',
+        ym: 52986040
+      })
+    }
+    bs.parentNode.insertBefore(el, bs);
+  })(document);
+</script>
+</body>
+</html>

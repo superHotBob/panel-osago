@@ -1,0 +1,103 @@
+@import '../../common/scss/mixins';
+@import '../../common/scss/variables';
+@import '../../common/scss/themes';
+
+.profile-new {
+  font-family: $font-ubuntu;
+  overflow: visible;
+  background-color: $color-white;
+  color: $color-black;
+  padding-top: 50px;
+  &__title {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: $font-supermolot;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 1.222;
+    letter-spacing: 0.01em;
+    word-break: break-word;
+  }
+
+  &__body{
+    box-sizing: border-box;
+    max-width: 1048px;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  &__subtitle{
+    padding-left: 60px;
+    padding-bottom: 24px;
+    font-weight: normal;
+    line-height: 24px;
+    font-size: 21px;
+    margin: 0;
+    word-break: break-word;
+  }
+
+  &__input {
+    width: 100%;
+    @mixin tabletMax {
+      max-width: 100%;
+    }
+  }
+
+  &__block {
+    padding-left: 58px;
+    padding-right: 58px;
+    padding-bottom: 30px;
+  }
+
+  &__form {
+    &__footer {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 50px;
+    }
+    &__item{
+      @media screen and (max-width: 768px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-top: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    cursor: pointer;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+
+    input {
+      width: 100%; 
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+      }      
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    input,
+    .mustins-input,
+    .mustins-phone-number {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &--with-border-bottom {
+    border-bottom: 1px solid $color-grey;
+    margin-bottom: 35px;
+  }
+}

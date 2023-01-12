@@ -1,0 +1,51 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+@import "../../../../common/scss/themes";
+
+
+.header-burger-menu {
+  &__container {
+    height: 100%;
+    display: none;
+    @include for-tablet-portrait-up {
+      padding-top: 48px;
+      display: block;
+    }
+    @include for-desktop-up {
+      padding-top: 48px;
+    }
+    @include for-big-desktop-up {
+      padding-top: 64px;
+    }
+  }
+
+  &__svg {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+  }
+
+  &__desktop {
+    display: none !important;
+    @include for-desktop-up {
+      display: flex !important;
+    }
+  }
+
+  &__tablet {
+    display: none !important;
+    @include for-tablet-portrait-up {
+      display: flex !important;
+    }
+    @include for-desktop-up {
+      display: none !important;
+    }
+  }
+
+  &__services-title{
+    margin-bottom: 22px !important;
+  }
+}

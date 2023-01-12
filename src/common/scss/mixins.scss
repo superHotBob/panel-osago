@@ -1,0 +1,128 @@
+@import "themes";
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktopMax {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tabletMax {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phoneMax {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin for-phone-only-retina {
+  @media
+  (max-width: 599px) and (-webkit-min-device-pixel-ratio: 2),
+  (max-width: 599px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up-retina {
+  @media
+  (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 600px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up-retina {
+  @media
+  (min-width: 900px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 900px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up-retina {
+  @media
+  (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 1200px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up-retina {
+  @media
+  (min-width: 1800px) and (-webkit-min-device-pixel-ratio: 2),
+  (min-width: 1800px) and (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin header-width {
+  @media screen and (min-width: 1130px) {
+    @content;
+  }
+}
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

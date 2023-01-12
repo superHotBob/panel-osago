@@ -1,0 +1,109 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.header-profile-button {
+
+  &__button {
+    width: 184px;
+    height: 72px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: $color-must900;
+    cursor: pointer;
+
+    @include for-tablet-portrait-up {
+      display: flex;
+    }
+
+    @include for-desktop-up {
+      height: 72px;
+    }
+    @include for-big-desktop-up {
+      height: 88px;
+    }
+
+    span {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      text-transform: uppercase;
+      @include for-desktop-up {
+        font-size: 14px;
+      }
+      @include for-big-desktop-up {
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  &__header-context-menu {
+    position: absolute;
+    right: 0;
+    top: 68px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 1;
+    @include for-big-desktop-up {
+      top: 84px;
+    }
+
+    &:hover {
+      display: block;
+    }
+  }
+
+  &__button:hover + &__header-context-menu {
+    display: block;
+  }
+
+  &__user-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+
+    span {
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__triangle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 54px;
+
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+    @include for-desktop-up {
+      top: 54px;
+    }
+    @include for-big-desktop-up {
+      top: 68px;
+    }
+  }
+
+  &__mobile-icon {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    @include for-tablet-portrait-up {
+      display: none;
+    }
+
+  }
+
+  &__mobile-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+}

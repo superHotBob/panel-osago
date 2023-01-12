@@ -1,0 +1,68 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins';
+
+.mustins-subscriptions-tarif {
+  padding-top: 82px;
+  padding-bottom: 110px;
+
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    max-width: 1170px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+
+    @include desktopMax {
+      grid-gap: 10px;
+    }
+
+    @include tabletMax {
+      grid-template-columns: 1fr;
+      grid-gap: 50px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 1.5;
+    font-family: $font-supermolot;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 18px;
+    word-break: break-word;
+    
+    @include desktopMax {
+      font-size: 28px;
+      line-height: 1;
+    }
+  }
+
+  &__subtitle {
+    max-width: 625px;
+    padding: 0 20px;
+    margin: 0 auto 94px;
+    font-size: 18px;
+    line-height: 1.35;
+    font-family: $font-ubuntu;
+    font-weight: normal;
+    text-align: center;
+    word-break: break-word;
+    @include desktopMax {
+      font-size: 14px;
+      margin: 0 auto 80px;
+    }
+
+    @include tabletMax {
+      padding-bottom: 0;
+      margin: 0 auto 60px;
+    }
+  }
+}

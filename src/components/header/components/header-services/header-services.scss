@@ -1,0 +1,191 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.header-services {
+  display: flex;
+  flex-direction: row;
+
+  &--vertical {
+    flex-direction: column;
+
+    .header-services__item {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include for-tablet-portrait-up {
+        justify-content: flex-start;
+      }
+    }
+
+    .header-services__item + .header-services__item {
+      margin-left: 0 !important;
+      margin-top: 8px !important;
+      @include for-tablet-portrait-up {
+        margin-top: 24px !important;
+      }
+    }
+
+    .header-services__item-start-mobile-text {
+      position: relative;
+      top: -3px;
+      left: 0;
+      @include for-tablet-portrait-up {
+        left: 12px;
+      }
+    }
+  }
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    @include for-desktop-up {
+      padding: 24px 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    & + & {
+      margin-left: 16px;
+      @include for-tablet-portrait-up {
+        margin-left: 32px;
+      }
+      @include for-desktop-up {
+        margin-left: 4px;
+      }
+      @include for-big-desktop-up {
+        margin-left: 20px;
+      }
+    }
+
+    @include for-phone-only {
+      &:last-child {
+        padding-right: 16px;
+      }
+    }
+
+    @include for-tablet-portrait-up {
+      &:last-child {
+        padding-right: 24px;
+      }
+    }
+
+    @include for-desktop-up {
+      &:last-child {
+        padding-right: 10px;
+      }
+      &:hover {
+        .header-services__item-hover-bubble {
+          display: block;
+        }
+
+        .header-services__item-link span {
+          @include themify($themes) {
+            color: themed($colorPrimary400) !important;
+          }
+        }
+
+        .header-services__item-icon svg {
+          @include themify($themes) {
+            fill: themed($colorPrimary400);
+          }
+        }
+      }
+
+    }
+
+    &--active {
+      .header-services__item-link span {
+        @include themify($themes) {
+          color: themed($colorPrimary) !important;
+        }
+      }
+
+      .header-services__item-icon svg {
+        @include themify($themes) {
+          fill: themed($colorPrimary);
+        }
+      }
+    }
+
+  }
+
+  &__item-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-icon {
+    display: block;
+    height: 24px;
+    margin-right: 12px;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      fill: $color-must900;
+    }
+  }
+
+  &__item-link {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    span {
+      @include for-desktop-up {
+        font-size: 14px !important;
+      }
+
+      @include for-big-desktop-up {
+        font-size: 16px !important;
+      }
+    }
+
+  }
+
+  &__item-hover-bubble {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    background: $color-must200;
+    border-radius: 12px;
+    padding: 16px 18px 21px;
+    max-width: 250px;
+    white-space: normal !important;
+    top: 64px;
+    @include for-big-desktop-up {
+      top: 72px;
+    }
+    margin-left: -14px;
+  }
+
+  &__item-triangle {
+    position: fixed;
+    margin-top: -29px;
+    margin-left: -2px;
+  }
+
+  &__item-start-text {
+    margin-left: 4px;
+  }
+
+  &__item-start-mobile-text {
+    font-size: 9px !important;
+    text-align: center;
+    padding: 2px 6px;
+    border-radius: 4px;
+    @include themify($themes) {
+      background: themed($colorPrimary100);
+    }
+    display: none;
+    @media screen and (max-width: 1139px) {
+      display: block;
+    }
+  }
+}
+
+

@@ -1,0 +1,7 @@
+export const REDUCER_TYPE_LOADING = 'Loading'
+export const REDUCER_TYPE_AUTH = 'Auth'
+export const REDUCER_TYPE_OSAGO_WIZARD = 'OsagoWizard'
+export const REDUCER_TYPE_ROOT = 'Root'
+export const REDUCER_TYPE_API = 'Api'
+export const REDUCER_TYPE_ACCIDENT_HISTORY_PAGE = 'AccidentHistoryPage'
+export const REDUCER_TYPE_ACCIDENT_FLOW = 'AccidentFlow'

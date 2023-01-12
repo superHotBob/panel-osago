@@ -1,0 +1,14 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+
+.header-about-must {
+  padding: 8px 0;
+  &__item {
+    margin-bottom: 16px;
+    @include for-phone-only {
+      margin-bottom: 20px;
+      padding: 0 16px;
+    }
+  }
+}

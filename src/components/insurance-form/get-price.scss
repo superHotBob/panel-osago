@@ -1,0 +1,27 @@
+.mustins-get-price {
+  .mustins-error-text {
+    br {
+      display: none;
+    }
+  }
+
+  &__phone-input {
+    .mustins-input {
+      height: 52px !important;
+    }
+
+    .mustins-phone-number {
+      height: 52px !important;
+    }
+
+    .mustins-form-group__container {
+      padding-top: 2px;
+    }
+  }
+
+  &__vin-input {
+    .mustins-input {
+      height: 52px !important;
+    }
+  }
+}

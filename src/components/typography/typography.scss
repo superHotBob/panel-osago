@@ -1,0 +1,319 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+@include for-desktop-up {
+  .mustins {
+    &-typography {
+      &__heading--desktop-up {
+        font-family: $font-ubuntu;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: 0.5px;
+
+        &__h1--desktop-up {
+          font-size: 46px !important;
+        }
+
+        &__h2--desktop-up {
+          font-size: 36px !important;
+          font-family:$font-supermolot !important;
+          font-weight: normal !important;
+
+        }
+
+        &__h3--desktop-up {
+          font-size: 20px !important;
+        }
+
+        &__h4--desktop-up {
+          font-size: 21px !important;
+          font-family: $font-ubuntu;
+        }
+
+        &__h5--desktop-up {
+          font-size: 18px !important;
+          font-family: $font-ubuntu;
+        }
+
+        &__h6--desktop-up {
+          font-size: 10px !important;
+        }
+      }
+
+      &__subhead--desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 18px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__body--desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 16px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__caption--desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 14px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__caption-2--desktop-up {
+        font-family: $font-supermolot;
+        font-size: 14px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__footnote--desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 12px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+  .mustins {
+    &-typography {
+      &__heading--big-desktop-up {
+        font-family: $font-ubuntu;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: 0.5px;
+
+        &__h1--big-desktop-up {
+          font-size: 46px !important;
+        }
+
+        &__h2--big-desktop-up {
+          font-size: 36px !important;
+          font-family:$font-supermolot !important;
+          font-weight: normal !important;
+        }
+
+        &__h3--big-desktop-up {
+          font-size: 20px !important;
+        }
+
+        &__h4--big-desktop-up {
+          font-size: 21px !important;
+          font-family: $font-ubuntu;
+        }
+
+        &__h5--big-desktop-up {
+          font-size: 18px !important;
+          font-family: $font-ubuntu;
+        }
+
+        &__h6--big-desktop-up {
+          font-size: 10px !important;
+        }
+      }
+
+      &__subhead--big-desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 18px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__body--big-desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 16px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__caption--big-desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 14px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__caption-2--big-desktop-up {
+        font-family: $font-supermolot;
+        font-size: 14px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+
+      &__footnote--big-desktop-up {
+        font-family: $font-ubuntu;
+        font-size: 12px !important;
+        line-height: 130%;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.mustins {
+  &-typography {
+    &__heading {
+      font-family: $font-ubuntu;
+      font-weight: bold;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+
+      &__h1 {
+        font-size: 46px;
+      }
+
+      &__h2 {
+        font-size: 36px !important;
+        font-family:$font-supermolot !important;
+        font-weight: normal !important;
+      }
+
+      &__h3 {
+        font-size: 20px;
+      }
+
+      &__h4 {
+        font-size: 21px !important;
+        font-family: $font-ubuntu;
+      }
+
+      &__h5 {
+        font-size: 18px !important;
+        font-family: $font-ubuntu;
+      }
+
+      &__h6 {
+        font-size: 10px;
+      }
+    }
+
+    &__regular {
+      font-weight: 400 !important;
+    }
+
+    &__medium {
+      font-weight: 500 !important;
+    }
+
+    &__bold {
+      font-weight: 700 !important;
+    }
+
+    &__subhead {
+      font-family: $font-ubuntu;
+      font-size: 18px;
+      line-height: 130%;
+      font-weight: 400;
+    }
+
+    &__body {
+      font-family: $font-ubuntu;
+      font-size: 16px;
+      line-height: 130%;
+      font-weight: 400;
+    }
+
+    &__caption {
+      font-family: $font-ubuntu;
+      font-size: 14px;
+      line-height: 130%;
+      font-weight: 400;
+    }
+
+    &__caption-2 {
+      font-family: $font-supermolot;
+      font-size: 14px;
+      line-height: 130%;
+      font-weight: 400;
+    }
+
+    &__footnote {
+      font-family: $font-ubuntu;
+      font-size: 12px;
+      line-height: 130%;
+      font-weight: 400;
+    }
+
+    &__black {
+      color: $color-black
+    }
+
+    &__gray-dark {
+      color: $color-grey-dark
+    }
+
+    &__gray {
+      color: $color-grey
+    }
+
+    &__gray-light {
+      color: $color-grey-light
+    }
+
+    &__white {
+      color: $color-white
+    }
+
+    &__must900 {
+      color: $color-must900;
+    }
+
+    &__must800 {
+      color: $color-must800;
+    }
+
+    &__must700 {
+      color: $color-must700;
+    }
+
+    &__must600 {
+      color: $color-must600;
+    }
+
+    &__must200 {
+      color: $color-must200;
+    }
+
+    &__must100 {
+      color: $color-must100;
+    }
+
+    &__primary {
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+    }
+
+    &__primary-dark {
+      @include themify($themes) {
+        color: themed($colorPrimary600);
+      }
+    }
+
+    &__primary-light {
+      @include themify($themes) {
+        color: themed($colorPrimary100);
+      }
+    }
+
+    &__red {
+      color: $color-red
+    }
+
+    &__warning {
+      color: $color-warning
+    }
+
+    &__inline {
+      display: inline;
+    }
+
+    &__block {
+      display: block;
+    }
+  }
+}

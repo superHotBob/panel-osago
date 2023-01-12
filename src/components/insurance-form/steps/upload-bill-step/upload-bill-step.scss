@@ -1,0 +1,37 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.mustins {
+  &-upload-bill-step {
+    &__uploader {
+      margin-bottom: 62px;
+    }
+
+    &__ok-svg {
+      svg{
+        circle{
+          @include themify($themes) {
+            fill: themed($colorPrimary) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.upload-bill-step__table {
+  table-layout: fixed;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.upload-bill-step__table-key {
+  width: 117px;
+  vertical-align: top;
+}
+
+.upload-bill-step__table-value {
+  width: 176px;
+  vertical-align: top;
+}

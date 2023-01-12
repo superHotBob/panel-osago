@@ -1,0 +1,151 @@
+@import "../../common/scss/mixins";
+
+.main-panel {
+  background: #FFFFFF;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  height: 560px;
+  overflow: hidden;
+
+  @include for-phone-only {
+    height: auto;
+    padding-bottom: 23px;
+  }
+
+  &_score {
+    @include for-phone-only {
+      height: auto;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    @include for-phone-only {
+      flex-direction: column;
+    }
+  }
+
+  &__form-container {
+    position: relative;
+    width: 330px;
+    transition: 1s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1;
+
+    @include for-phone-only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  &__form-container_animated {
+    width: 0;
+    margin-left: 330px;
+    opacity: 0;
+    overflow: hidden;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__data-container {
+    opacity: 0;
+    position: absolute;
+    transition: 1s;
+    margin-left: 490px;
+    @include for-phone-only {
+      margin-left: 0;
+      display: none;
+    }
+  }
+
+  &__data-container_animated {
+    opacity: 1;
+  }
+
+  &__osago {
+    background: #F6F7FF;
+    height: 140px;
+    width: 820px;
+    border-top: 1px solid #B9BBCD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  &__osago-container {
+    position: relative;
+    top: 0;
+    transition: 1s;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__osago-container_animated {
+    top: -140px;
+    transition: 1s;
+  }
+
+  &__technologies {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    align-items: center;
+    margin-top: 0 !important;
+  }
+
+  &__mobile-data-container {
+    display: none;
+    @include for-phone-only {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 20px;
+      opacity: 0;
+      transition: 1s;
+      display: none;
+    }
+  }
+
+  &__mobile-data-container_animated {
+    @include for-phone-only {
+      opacity: 1;
+      display: flex;
+    }
+  }
+
+  &__mobile-auto-data {
+    margin-bottom: 20px;
+  }
+
+  &__mobile-osago-container {
+    display: none;
+    @include for-phone-only {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 32px;
+    }
+  }
+
+  &__mobile-osago-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  &__ai-logo {
+    width: 126px;
+    margin-left: 8px;
+  }
+}

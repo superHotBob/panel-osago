@@ -1,0 +1,85 @@
+@import "src/common/scss/variables";
+@import "src/common/scss/mixins";
+
+
+.mustins-modal-header {
+  padding: 64px 37px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  &--primary {
+    @include themify($themes) {
+      background: themed($colorPrimary);
+    }
+  }
+
+  &--red {
+    background-color: $color-red;
+  }
+
+  &--yellow {
+    background-color: $color-warning;
+  }
+
+  &--grey {
+    background-color: $color-grey;
+  }
+
+  &__shturmanSvg {
+    position: absolute;
+    top: 0;
+    margin-top: -40px;
+    color: white;
+    align-self: center;
+    width: 90px;
+    height: 90px;
+    z-index: 100;
+  }
+
+  &__title, &__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.8px;
+    text-align: center;
+    color: $color-white;
+    font-family: $font-ubuntu;
+  }
+
+  &__title {
+    flex: 1 0 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title + &__text-container {
+    //margin-top: 30px;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__text-container {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    flex-direction: row;
+    flex: 1 0 100%;
+    justify-content: space-between;
+  }
+
+  &__line {
+    flex: 0 0 24px;
+    height: 1px;
+    background-color: white;
+    align-self: center;
+  }
+}

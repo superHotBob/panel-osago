@@ -1,0 +1,37 @@
+@import '../../../../common/scss/mixins';
+@import '../../../../common/scss/variables';
+
+.accident-legend {
+  display: flex;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & + & {
+      margin-left: 16px;
+      @include for-phone-only {
+        margin-left: 12px;
+      }
+    }
+  }
+
+  &__circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    margin-right: 4px;
+
+    &--norma {
+      background: $color-status-success;
+    }
+
+    &--accident-risk {
+      background: $color-status-warning;
+    }
+
+    &--accident {
+      background: $color-status-danger;
+    }
+  }
+}

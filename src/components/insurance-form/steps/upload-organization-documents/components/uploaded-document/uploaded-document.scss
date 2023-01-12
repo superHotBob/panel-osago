@@ -1,0 +1,33 @@
+@import "../../../../../../common/scss/variables";
+@import "../../../../../../common/scss/mixins";
+
+.mustins {
+  &-uploaded-document {
+    padding: 8px 0;
+    box-sizing: border-box;
+
+    &__title-row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 4px;
+      justify-content: space-between;
+    }
+
+    &__icon-ok {
+      svg {
+        circle {
+          @include themify($themes) {
+            fill: themed($colorPrimary);
+          }
+        }
+      }
+    }
+
+    &__icon-error {
+    }
+  }
+}
+
+.mustins-uploaded-document + .mustins-uploaded-document {
+  margin-top: 8px;
+}

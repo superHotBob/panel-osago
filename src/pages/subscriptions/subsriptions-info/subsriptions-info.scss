@@ -1,0 +1,129 @@
+@import '../../../common/scss/variables';
+@import '../../../common/scss/mixins';
+@import '../../../common/scss/themes';
+
+.mustins-subscriptions-info {
+  padding-top: 67px;
+  &__header {
+    display: block;
+    &__title {
+      font-family: $font-supermolot;
+      text-align: center;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 17px;
+      font-size: 36px;
+      line-height: 1.22;
+      padding-left: 20px;
+      padding-right: 20px;
+      letter-spacing: 0.3px;
+      white-space: pre-line;
+
+      @include desktopMax {
+        font-size: 28px;
+        line-height: 1;
+      }
+    }
+  
+    &__subtitle {
+      width: 100%;
+      max-width: 655px;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 1.45;
+      font-family: $font-ubuntu;
+      padding-left: 20px;
+      padding-right: 20px;
+      white-space: pre-line;
+      word-break: break-word;
+      
+      @include desktopMax {
+        font-size: 14px;
+        line-height: 1;
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1512px;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 112px;
+
+    @include desktopMax {
+      grid-gap: 10px;
+    }
+  
+    @include tabletMax {
+      padding-top: 20px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__icon {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 33px;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+    @include desktopMax {
+      width: 120px;
+      height: 120px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.35;
+    font-family: $font-ubuntu;
+    max-width: 360px;
+    margin: 0 auto;
+
+    @include desktopMax {
+      font-size: 14px;
+      line-height: 1;
+      padding: 0 0;
+    }
+
+    @include tabletMax {
+      max-width: 266px;
+      padding: 0 20px;
+    }
+  }
+  
+  &__titleBreak {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__item {
+    @include tabletMax {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__divider {
+    border-bottom: 1px solid $color-grey;
+  }
+}

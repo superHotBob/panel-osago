@@ -1,0 +1,94 @@
+@import "../../../common/scss/variables";
+@import "../../../common/scss/mixins";
+
+.mustins-subscriptions-form {
+  box-sizing: border-box;
+  padding-bottom: 108px;
+  padding-top: 98px;
+  background: $color-grey-light-2;
+
+  &__container {
+    max-width: 976px;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-family: $font-supermolot;
+    margin: 0 auto 18px auto;
+    line-height: 44px;
+    font-weight: normal;
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    @include tabletMax {
+      font-size: 20px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    @include phoneMax {
+      font-size: 18px;
+    }
+  }
+  &__titleBreak {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-ubuntu;
+    margin: 0 auto 60px auto;
+    font-weight: normal;
+    text-align: center;
+    line-height: 1.35;
+    max-width: 515px;
+    font-size: 18px;
+    width: 100%;
+    word-break: break-word;
+    @include tabletMax {
+      font-size: 14px;
+      line-height: 1;
+      margin-bottom: 40px;
+    }
+
+    @include phoneMax {
+      font-size: 12px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .mustins-form-group {
+      margin: 0 8px;
+    }
+    @include desktopMax {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-gap: 0;
+    }
+  }
+
+  &__button {
+    height: 48px;
+    margin: 0 8px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.2;
+
+    @include desktopMax {
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+  }
+}

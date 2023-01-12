@@ -1,0 +1,31 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+@import "../../common/scss/themes";
+
+.mustins-global-alert {
+  transition: $transition-normal;
+  font-family: $font-ubuntu;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  line-height: 1.5;
+  overflow: hidden;
+  font-size: 16px;
+  position: fixed;
+  cursor: default;
+  display: flex;
+  z-index: 999;
+  height: 46px;
+  width: 100%;
+  top: 72px;
+  right: 0;
+  left: 0;
+  @include themify($themes) {
+    background-color: themed($colorPrimary);
+  }
+  @media (min-width: 1600px) {
+    top: 89px;
+    height: 46px;
+  }
+}

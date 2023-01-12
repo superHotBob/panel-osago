@@ -1,0 +1,76 @@
+@import "../../../common/scss/mixins";
+@import "../../../common/scss/variables";
+
+.rate-note {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__legend-container {
+    display: flex;
+    justify-content: center;
+    min-width: 28px;
+  }
+
+  &__legend-container span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+    color: #9E9E9E;
+
+    @include for-phone-only {
+      font-size: 9px;
+    }
+  }
+
+  &__legend {
+    width: 47px;
+    height: 10px;
+    left: 0px;
+    top: 0px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    @include for-phone-only {
+      width: 36px;
+      height: 7.5px;
+    }
+  }
+
+  &__text {
+    min-width: 66px;
+    text-align: right;
+    font-weight: 700;
+  }
+}
+
+
+.legend-green {
+
+  @include themify($themes) {
+    background: themed($colorPrimary);
+  }
+}
+
+.legend-blue {
+  background: #4C86EE;
+}
+
+.legend-yellow {
+  background: #E6C104;
+}
+
+.legend-orringe {
+  background: #DB8A3D;
+}
+
+.legend-red {
+  background: #D76064;
+}

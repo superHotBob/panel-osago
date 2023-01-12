@@ -1,0 +1,169 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/variables";
+
+.mustins {
+  &-radio-group {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-radio {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCD;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 27px 16px;
+    position: relative;
+    cursor: pointer;
+    height: 80px;
+
+    & + & {
+      margin-top: 12px;
+    }
+
+    &--details {
+      padding: 16px;
+    }
+
+    &--disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+      border-color: $color-must600 !important;
+      background: $color-must200 !important;
+
+      .mustins-radio__faker {
+        opacity: 0;
+        border-color:$color-must600 !important;
+      }
+
+      .mustins-radio__faker-icon {
+        background: $color-must600 !important;
+      }
+
+    }
+
+    &--checked {
+      @include themify($themes) {
+        border-color: themed($colorPrimary);
+      }
+      .mustins-radio__faker {
+        opacity: 1 !important;
+      }
+    }
+
+    input[type="radio"] {
+      opacity: 0;
+      position: absolute;
+    }
+
+    input[type="radio"]:checked + .mustins-radio__faker {
+      @include themify($themes) {
+        border-color: themed($colorPrimary);
+      }
+    }
+
+    &__text-wrapper {
+      font-family: 'Ubuntu', sans-serif;
+      flex: 1 1 auto;
+    }
+
+    &__text {
+      color: #201F32;
+      font-size: 16px;
+      line-height: 19px;
+      flex: 1 1 auto;
+    }
+
+    &__sub-text {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #8F8E99;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0;
+    }
+
+    &__faker {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      border-radius: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__faker-icon {
+      opacity: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 60px;
+      @include themify($themes) {
+        background: themed($colorPrimary);
+      }
+
+      transition: opacity 0.15s ease-out;
+    }
+
+    input[type="radio"]:checked + .mustins-radio__faker .mustins-radio__faker-icon {
+      opacity: 1;
+    }
+  }
+
+  &-default-radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &__faker {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      border-radius: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__faker-icon {
+      opacity: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 60px;
+      @include themify($themes) {
+        background: themed($colorPrimary);
+      }
+
+      transition: opacity 0.15s ease-out;
+    }
+
+    input[type="radio"]:checked + .mustins-default-radio__faker .mustins-default-radio__faker-icon {
+      opacity: 1;
+    }
+
+    input[type="radio"]:checked + .mustins-default-radio__faker {
+      @include themify($themes) {
+        border-color: themed($colorPrimary);
+      }
+    }
+
+    &__text {
+      margin-left: 16px;
+      height: 24px;
+      cursor: pointer;
+      //width: calc(100% - 45px);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../../common/scss/variables";
+@import "../../../../common/scss/mixins";
+
+.header-link {
+  display: block;
+  text-decoration: none;
+  word-break: break-word;
+  @include for-desktop-up {
+    width: calc(100% + 24px);
+  }
+
+  &:hover {
+    span {
+        @include themify($themes) {
+          color: themed($colorPrimary400)  !important;
+        }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    &:hover {
+      span {
+        color: $color-must900 !important;
+      }
+    }
+  }
+}

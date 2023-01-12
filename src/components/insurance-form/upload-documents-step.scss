@@ -1,0 +1,60 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-upload-documents-step {
+    &__block {
+      border-bottom: 1px solid #E0E0E0;
+      padding: 30px 37px 20px;
+      margin: 0 -37px;
+
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .mustins-checkbox__container {
+        margin-bottom: 25px;
+      }
+
+      .mustins-tabs__header {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__ok-icon {
+      svg {
+        circle {
+          @include themify($themes) {
+            fill: themed($colorPrimary);
+          }
+        }
+      }
+    }
+
+    &__title {
+      font-family: $font-ubuntu;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      color: #201F32;
+      margin-bottom: 30px;
+    }
+
+    .mustins-form-group {
+      margin-bottom: 38px;
+    }
+
+    &__driver-license-select .mustins-form-group {
+      margin-bottom: 30px !important;
+    }
+
+    .mustins-image-upload__label b {
+      font-weight: 500;
+    }
+  }
+}

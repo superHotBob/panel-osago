@@ -1,0 +1,52 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-progress {
+    &__step {
+      color: $color-grey;
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 10px;
+      font-family: $font-supermolot;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__percentage {
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+      font-size: 14px;
+      line-height: 19px;
+      font-family: $font-supermolot;
+    }    
+
+    &__line {
+      background: $color-grey-light;
+      border-radius: 50px;
+      height: 4px;
+      margin-bottom: 14px;
+      position: relative;
+
+      &-content {
+        @include themify($themes) {
+          background: themed($colorPrimary);
+        }
+        border-radius: 50px;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        transition: width 0.15s ease-out;
+      }
+    }
+  }
+}

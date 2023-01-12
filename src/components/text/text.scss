@@ -1,0 +1,72 @@
+.mustins {
+  &-text {
+    font-style: normal;
+    font-weight: normal;
+    color: #141526;
+    font-size: 16px;
+    word-break: normal !important;
+
+    &__s-12 {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &__s-14 {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &__s-16 {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    &__s-20 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__dark-gray {
+      color: #9E9E9E;
+    }
+
+    &__gray {
+      color: #B9BBCD;
+    }
+
+    &__black{
+      color: #141526;
+    }
+    &__red {
+      color: #D76064;
+    }
+
+    &__absolute-black{
+      color: #000000;
+    }
+
+    &__uppercase {
+      text-transform: uppercase;
+    }
+
+    &__supermolot {
+      font-family: Supermolot;
+    }
+
+    &__ubuntu {
+      font-family: Ubuntu;
+    }
+
+    &__light {
+      font-weight: 300;
+    }
+
+    &__textAlignCenter {
+      text-align: center;
+    }
+
+    &__medium-weight {
+      font-weight: 500
+    }
+  }
+
+}

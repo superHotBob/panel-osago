@@ -1,0 +1,9 @@
+@import "../../../../../../common/scss/variables";
+@import "../../../../../../common/scss/mixins";
+
+.mustins {
+  &-upload-document-progress {
+    box-sizing: border-box;
+    padding: 20px 0;
+  }
+}

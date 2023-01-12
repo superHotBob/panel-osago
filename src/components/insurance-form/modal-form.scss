@@ -1,0 +1,33 @@
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-info-list {
+    padding: 0;
+    margin: 40px 0;
+    list-style: none;
+  }
+
+  &-info-list-item {
+    display: flex;
+    & + & {
+      margin-top: 12px;
+    }
+
+    &__legend {
+      width: 120px;
+    }
+  }
+
+  &-owner-title {
+    margin-bottom: 24px;
+  }
+
+  &-cargo-type {
+    margin-bottom: 32px;
+  }
+
+  &-car-number-title {
+    margin-bottom: 14px;
+    margin-top: 40px;
+  }
+}

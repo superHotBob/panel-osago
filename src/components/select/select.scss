@@ -1,0 +1,116 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-select {
+    width: 296px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 18px;
+    color: $color-black;
+
+
+    border: 1px solid $color-black;
+    height: 48px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 30px 0 20px;
+
+    &--is-disabled {
+
+    }
+
+
+    &__control {
+      transition: border-color 0.15s ease-out;
+      position: relative;
+
+      &--is-disabled {
+        background: $color-must200 !important;
+        border-color: $color-must600 !important;
+      }
+    }
+
+    &__value-container {
+      font-family: $font-ubuntu;
+      font-style: normal;
+      font-size: 18px;
+      color: $color-black;
+      line-height: 130%;
+      cursor: pointer;
+    }
+
+    &__single-value, &__single-value--is-disabled {
+      margin: 0 !important;
+      top: 10px !important;
+
+      font-family: $font-ubuntu;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 130%;
+      cursor: pointer;
+    }
+
+    &__single-value--is-disabled {
+      color: $color-must700 !important;
+    }
+  }
+
+  &__single-value {
+    color: $color-black !important;
+  }
+
+  &-select-ctn--error .mustins-select__control {
+    border-color: #D76064;
+  }
+
+  &-select-ctn__indicator {
+    position: relative;
+    top: 3px;
+  }
+
+  &-select__option:hover,
+  &-select-ctn .mustins-select__option:hover,
+  &-select-ctn .mustins-filter-view__option:hover {
+    @include themify($themes) {
+      color: themed($colorPrimary) !important;
+    }
+  }
+
+  &-select-ctn--empty .mustins-select__value-container {
+    color: $color-black;
+    opacity: 0.2;
+  }
+
+
+  //&-select__indicators {
+  //  display: none !important;
+  //}
+
+  //&-select__control:after,
+  //&-select__control:before {
+  //  content: '';
+  //  width: 10px;
+  //  height: 1px;
+  //  position: absolute;
+  //  background: #545454;
+  //  top: 24px;
+  //  transition: transform 0.15s ease-out;
+  //}
+  //
+  //&-select__control:after {
+  //  transform: rotate(135deg);
+  //  right: 15px;
+  //  background-image: url("../../svg/down.svg");
+  //}
+  //
+  //&-select__control:before {
+  //  transform: rotate(-135deg);
+  //  right: 22px;
+  //}
+}
+

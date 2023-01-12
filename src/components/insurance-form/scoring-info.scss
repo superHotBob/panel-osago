@@ -1,0 +1,96 @@
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-scoring-info {
+    &__logo {
+      margin-bottom: 18px;
+      line-height: 0;
+    }
+
+    &__explanation {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    &__logofooter {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__grey-block {
+      padding: 14px 24px;
+      background: $color-grey-light;
+      border-radius: 10px;
+      margin-bottom: 40px;
+
+      &-title {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-cost {
+        font-size: 48px;
+        color: $color-must900;
+        line-height: 40px;
+        font-weight: 400;
+        font-family: $font-supermolot;
+        white-space: nowrap;
+
+        &-rub {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__details-title {
+      margin-bottom: 24px;
+    }
+
+    &__info-list {
+      padding: 0;
+      margin-bottom: 40px;
+      list-style: none;
+
+      &-item {
+        margin-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+
+        &-description {
+          justify-content: left;
+          width: 188px;
+        }
+
+        &-legend {
+          width: 32px;
+          padding-left: 10px;
+        }
+
+        &-cost {
+          width: 66px;
+          text-align: right;
+        }
+      }
+    }
+
+    &__link {
+      font-family: $font-ubuntu;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+      padding-top: 24px;
+      display: flex;
+      justify-content: center;
+      text-decoration: underline;
+    }
+  }
+}

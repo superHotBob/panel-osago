@@ -1,0 +1,270 @@
+@import "../../../../../common/scss/variables";
+@import "../../../../../common/scss/mixins";
+
+
+@-webkit-keyframes rotation /* Safari and Chrome */
+{
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+.accident-history-card {
+  display: flex;
+  border-radius: 6px;
+  width: 100%;
+  min-height: 128px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+  &--desktop {
+    display: none;
+    @include for-desktop-up {
+      display: flex;
+    }
+  }
+
+  &--mobile-and-tablet {
+    display: flex;
+    border-radius: 0;
+    flex-direction: column;
+    @include for-desktop-up {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: $color-must150;
+    padding: 32px 24px 32px 32px;
+    box-sizing: border-box;
+
+    &--expanded {
+      background: $color-must100;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 24px 8px 18px;
+    @include for-phone-only {
+      padding: 16px 12px 8px 8px;
+    }
+    background: $color-must150;
+    @include for-desktop-up {
+      padding: 0;
+      background: $color-must100;
+    }
+
+    &--expanded {
+      background: $color-must100;
+    }
+  }
+
+  & + & {
+    margin-top: 1px;
+    @include for-desktop-up {
+      margin-top: 12px;
+    }
+  }
+
+  &__item-label {
+    height: 36px;
+    min-width: 150px;
+  }
+
+  &__car-type {
+    margin-top: 8px;
+    max-width: 148px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //background: $color-must150;
+  }
+
+  &__refresh-svg {
+    cursor: pointer;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+    &--rotation {
+      -webkit-animation: rotation 2s linear infinite;
+      -moz-animation: rotation 2s linear infinite;
+      -ms-animation: rotation 2s linear infinite;
+      -o-animation: rotation 2s linear infinite;
+      animation: rotation 2s linear infinite;
+    }
+  }
+
+  &__chevron-down-svg {
+    cursor: pointer;
+
+    &--expanded {
+      position: relative;
+      top: 465px;
+      transform: rotate(180deg);
+      @include for-big-desktop-up {
+        top: 570px;
+      }
+    }
+  }
+
+  &__details {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include for-desktop-up {
+      flex-direction: row;
+      margin: 44px 0 12px;
+      justify-content: space-evenly;
+      align-items: normal;
+    }
+
+    &--expanded {
+      display: flex;
+    }
+  }
+
+  &__score-graph {
+    transform: scale(0.848);
+    @include for-desktop-up {
+      margin-top: -40px;
+    }
+  }
+
+  &__rating {
+    width: 296px;
+  }
+
+  &__rating-title {
+    margin-bottom: 32px;
+  }
+
+  &__info-title {
+    margin-bottom: 32px;
+  }
+
+  &__rating-button {
+    margin-top: 48px;
+  }
+
+  &__question-svg {
+    margin-right: 8px;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+  }
+
+  &__mobile-row {
+    display: flex;
+    justify-content: space-between;
+
+    & + & {
+      margin-top: 12px;
+    }
+  }
+
+  &__mobile-question-svg {
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 3px;
+  }
+
+  &__mobile-expand-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  &__color-and-content-mobile {
+    display: flex;
+  }
+
+  &__chevron-down-mobile-expanded {
+    margin-top: 16px;
+    transform: rotate(180deg);
+  }
+
+  &__item-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24px;
+
+    &--score {
+      justify-content: flex-start;
+    }
+  }
+
+  &__osago-button {
+    position: relative;
+    top: 1px;
+  }
+
+  &__item {
+    &--osago {
+      width: 200px
+    }
+  }
+
+  &__fines-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__fines-count-mobile {
+    margin-bottom: 4px;
+  }
+
+  &__osago-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__osago-date-mobile {
+    margin-bottom: 4px;
+  }
+
+  &__badge {
+    position: absolute;
+    margin-top: -50px;
+  }
+}

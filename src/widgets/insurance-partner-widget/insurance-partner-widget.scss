@@ -1,0 +1,202 @@
+@import "../../common/scss/form";
+@import "../../common/scss/fonts";
+@import "../../common/scss/mixins";
+
+.mustins {
+  &-modal, &-partner-widget {
+    font-family: Supermolot, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  &-partner-widget {
+    width: 370px;
+    background: $color-must200;
+    border-radius: 10px;
+    padding: 40px 37px;
+    box-sizing: border-box;
+
+    &__must-extra-space{
+      margin-bottom: 48px !important;
+    }
+
+    &__brands {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      width: 170px;
+      height: 24px;
+
+      &--kuplyu-polis {
+        width: 188px;
+      }
+
+      &--opti24 {
+        width: 184.5px;
+      }
+
+      &--eurogarant {
+        width: 202px;
+      }
+      &--gpnregion {
+        width: 165px;
+      }
+      &--kamaz {
+        width: 211px;
+      }
+      &--ipolis {
+        width: 215px;
+      }
+      &--infull {
+        width: 182px;
+      }
+
+      &--polis-online {
+        width: 256px;
+      }
+
+      span {
+        color: #BDBDBD;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    &__brands-demo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      width: 224px;
+      height: 24px;
+
+      span {
+        color: #BDBDBD;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    &__must-logo {
+      width: 66px;
+    }
+
+    &__must-logo-opti {
+      width: 74px;
+    }
+
+    &__brands-container {
+      width: 296px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    &__plus {
+      position: relative;
+      top: 1px;
+    }
+
+    &__e100-logo {
+      width: 72px;
+    }
+
+    &__elpolis-logo {
+      width: 76px;
+    }
+
+    &__opti24-logo {
+      width: 77.5px;
+    }
+    &__kamaz-logo {
+      width: 102px;
+    }
+    &__ipolis-logo {
+      width: 104px;
+    }
+
+    &__agent-broker-logo {
+      width: 68px;
+    }
+
+    &__kuplyu-polis-logo {
+      width: 94px;
+    }
+
+    &__plus {
+      position: relative;
+      top: 1px;
+    }
+
+    &__e100-logo {
+      width: 72px;
+    }
+
+    &__oboz-logo {
+      width: 67px;
+    }
+
+    &__ingos-logo {
+      width: 210px;
+    }
+
+    &__polis-online-logo {
+
+    }
+
+    &__infull-logo {
+
+    }
+
+    &__eurogarant-logo {
+
+    }
+
+
+    &__labels {
+      &--must {
+        margin-bottom: 47px;
+      }
+    }
+
+    &__title {
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+      font-size: 33px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      margin-bottom: 4px;
+      margin-top: 3px;
+    }
+
+    &__description {
+      color: $color-black;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: 0.67px;
+      white-space: nowrap;
+    }
+  }
+
+  &-get-price {
+    margin-top: 25px;
+
+    &__car-number {
+      min-height: 132px;
+      margin-bottom: 14px;
+    }
+  }
+
+  &-tc {
+    text-align: center;
+  }
+}
+

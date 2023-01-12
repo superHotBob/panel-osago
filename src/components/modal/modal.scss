@@ -1,0 +1,183 @@
+@import "src/common/scss/variables";
+@import "src/common/scss/mixins";
+
+$color-modal-bg: rgba(0, 0, 0, .7);
+
+.mustins-modal {
+  display: none;
+
+  &--opened {
+    display: block;
+  }
+
+  &__root {
+    &--scrollable {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 9999;
+    }
+
+    &--loading {
+      .mustins-modal__container {
+        position: relative;
+        &:after {
+          content: '';
+          @include themify($themes) {
+            background-image: themed($loaderPrimaryGif);
+          }
+          background-color: rgba(255,255,255,0.5);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 40px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    z-index: 1;
+  }
+
+  &__fixer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container {
+    background: $color-white;
+    border-radius: 10px;
+    z-index: 902;
+    margin: auto;
+    width: 370px;
+    max-width: 100%;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, .05);
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    transition: opacity .5s;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 40px;
+  }
+
+  &__content {
+    padding: 40px 37px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__row {
+    padding-top: 8px;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__label {
+    display: flex;
+    padding-bottom: 6px;
+  }
+
+  &__digit {
+    width: 20px;
+  }
+
+  &__countdown-text {
+    font-style: normal;
+    color: #545454;
+    font-size: 12px;
+  }
+
+  &__description {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-family: Ubuntu, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  &--bordered {
+    margin-top: 20px;
+    border-top: 1px solid #E0E0E0;
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+body {
+  &:after {
+    content: '';
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s;
+    background: $color-modal-bg;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+  }
+
+  &.body-mustins-modal--opened {
+    overflow: hidden;
+    @include for-phone-only {
+       position: sticky;
+    }
+
+    &:after {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.mustins-modal.mustins-modal--opened {
+  .mustins-modal__container {
+    opacity: 1;
+    visibility: visible;
+  }
+}

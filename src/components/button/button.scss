@@ -1,0 +1,174 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+@import "../../common/scss/themes";
+
+.mustins {
+  &-button {
+    font-family: $font-supermolot;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 296px;
+    height: 56px;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    padding-right: 0;
+    padding-left: 0;
+    @include themify($themes) {
+      background-color: themed($colorPrimary);
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: themed($colorPrimary400);
+      }
+    }
+
+    &:active {
+      @include themify($themes) {
+        background-color: themed($colorPrimary600);
+      }
+      transition: none;
+    }
+
+    &--icon-download {
+      @include themify($themes) {
+        background-image: themed($downloadIconPrimary);
+      }
+      background-repeat: no-repeat;
+      background-position: 15px;
+    }
+
+    &--loading {
+      background-image: url("../../assets/images/preloader.gif") !important;
+      background-size: auto 70% !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      text-indent: -9999px;
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.8;
+    }
+
+    &--landing {
+      width: 220px;
+      height: 48px;
+
+      #must-eosago-phone-mobile &,
+      #must-eosago-email-mobile &,
+      .reconstruction-widget & {
+        width: 296px;
+      }
+    }
+
+    &--disabled {
+      pointer-events: none;
+      user-select: none;
+      background: $color-grey !important;
+    }
+
+    &--width-auto {
+      width: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &--width-fluid {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &--type {
+      &-center {
+        text-align: center;
+      }
+
+      &-big {
+        height: 56px;
+      }
+
+      &-upper {
+        text-transform: uppercase;
+      }
+
+      &-lower {
+        text-transform: none;
+      }
+    }
+
+    &--small {
+      width: 100px !important;
+      height: 24px !important;
+      font-size: 14px !important;
+    }
+
+    &--no-border {
+      background-color: $color-white;
+      font-family: $font-ubuntu;
+      font-style: normal;
+      font-size: 14px;
+      line-height: 20px;
+      display: inline;
+      text-align: center;
+      text-decoration-line: underline;
+      @include themify($themes) {
+        color: themed($colorPrimary);
+      }
+    }
+  }
+
+  &-button--link,
+  &-button--type-link {
+    font-family: $font-ubuntu;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0;
+    height: auto;
+    display: inline-block;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  &-button--type-hollow {
+    background-color: white !important;
+    border: 1px solid;
+    @include themify($themes) {
+      color: themed($colorPrimary);
+      border-color: themed($colorPrimary);
+    }
+
+
+    &:hover {
+      background-color: white !important;
+    }
+  }
+
+  &-button--type-hollow.mustins-button--loading {
+    @include themify($themes) {
+      background-image: themed($loaderPrimaryGif) !important;
+    }
+  }
+}

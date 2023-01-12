@@ -1,0 +1,40 @@
+@import "../../common/scss/mixins";
+@import "../../common/scss/common";
+
+.reconstruction-widget {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 450px;
+  @include for-phone-only {
+    width: auto;
+  }
+
+  .mustins-form-group {
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+
+  .mustins-email {
+    margin-right: 13px !important;
+    width: 257px !important;
+    position: relative;
+    @include for-phone-only {
+      width: 100% !important;
+      margin-bottom: 37px !important;
+      margin-right: 0 !important;
+    }
+    &__input{
+      height: 56px !important;
+      width: 245px !important;
+    }
+  }
+
+  button {
+    width: 180px;
+    @include for-phone-only {
+      width: 100%;
+    }
+  }
+}
